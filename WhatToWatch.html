@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="What to Watch - PopCorn">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What to Watch - PopCorn</title>
+<link rel="stylesheet" href="style.css">
+<script src="java.js" defer></script>
+</head>
+
+<body>
+<!-- IMDb-like Top Bar -->
+<header>
+    <div class="top-bar">
+        <!-- LEFT: Theme Toggle Button -->
+        <div class="left-section">
+            <button class="theme-toggle" onclick="changeTheme()">🌙 Dark Mode</button>
+        </div>
+        
+        <!-- CENTER: Logo with Image -->
+        <div class="center-section">
+            <div class="logo-container">
+                <img src="Images and video/popcorn_logo.jpeg" alt="PopCorn Logo" class="site-logo">
+                <a href="index.html" class="logo">PopCorn</a>
+            </div>
+        </div>
+        
+        <!-- RIGHT: Language and Pro -->
+        <div class="right-section">
+            <a href="#" class="imdb-pro">PopCorn Pro</a>
+            <span class="language-selector">EN</span>
+        </div>
+    </div>
+    
+    <!-- Main Navigation -->
+    <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+    <nav class="main-nav">
+        <div class="dropdown">
+            <button class="dropdown-btn" onclick="toggleDropdown(this)">
+                Movies ▼
+            </button>
+            <div class="dropdown-content">
+                <a href="WhatToWatch.html">What to watch</a>
+                <a href="TopRated.html">Top Rated</a>
+            </div>
+        </div>
+        
+        <div class="dropdown">
+            <button class="dropdown-btn" onclick="toggleDropdown(this)">
+                Awards & Events ▼
+            </button>
+            <div class="dropdown-content">
+                <a href="Oscar.html">Oscars</a>
+                <a href="Emmy.html">Emmys</a>
+            </div>
+        </div>
+        
+        <a href="index.html#reviews" class="dropdown-btn">Reviews</a>
+        <a href="index.html#ranking" class="dropdown-btn">Ranking</a>
+        <a href="index.html#submit" class="dropdown-btn">Submit Review</a>
+        <a href="index.html#community" class="dropdown-btn">Community</a> 
+        <a href="index.html#about" class="dropdown-btn">About</a>
+    </nav>
+</header>
+
+<!-- What to Watch Header -->
+<section class="hero" style="height: 200px;">
+    <div class="hero-content">
+        <h1>What to Watch</h1>
+        <p>Movie recommendations based on your mood and preferences</p>
+    </div>
+</section>
+
+<!-- What to Watch Section -->
+<section class="section">
+    <h2 class="title">Movie Recommendations</h2>
+    
+    <!-- Mood Selection -->
+    <div class="mood-selector">
+        <h3>How are you feeling today?</h3>
+        <div class="mood-buttons">
+            <button class="mood-btn active" data-mood="all">🍿 All Movies</button>
+            <button class="mood-btn" data-mood="action">💥 Action & Adventure</button>
+            <button class="mood-btn" data-mood="comedy">😂 Comedy & Fun</button>
+            <button class="mood-btn" data-mood="drama">🎭 Drama & Emotion</button>
+            <button class="mood-btn" data-mood="romance">❤️ Romance & Love</button>
+            <button class="mood-btn" data-mood="scifi">🚀 Sci-Fi & Fantasy</button>
+            <button class="mood-btn" data-mood="thriller">😱 Thriller & Mystery</button>
+            <button class="mood-btn" data-mood="family">👨‍👩‍👧‍👦 Family & Kids</button>
+        </div>
+    </div>
+    
+    <!-- Movie Recommendations Grid -->
+    <div class="recommendations-grid">
+        <!-- Action & Adventure -->
+        <div class="movie-recommendation" data-mood="action">
+            <div class="rec-poster">
+                <img src="Images and video/Shawnshank.jpg" alt="Mad Max: Fury Road">
+            </div>
+            <div class="rec-info">
+                <h3>Mad Max: Fury Road (2015)</h3>
+                <p>⭐ 8.1/10 • 1M votes • Action, Adventure, Sci-Fi • 2h</p>
+                <p>In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler in search for her homeland with the aid of a group of female prisoners, a psychotic worshiper, and a drifter named Max.</p>
+                <a href="#" class="btn">See Details</a>
+            </div>
+        </div>
+        
+        <div class="movie-recommendation" data-mood="action">
+            <div class="rec-poster">
+                <img src="Images and video/Shawnshank.jpg" alt="John Wick">
+            </div>
+            <div class="rec-info">
+                <h3>John Wick (2014)</h3>
+                <p>⭐ 7.4/10 • 750K votes • Action, Crime, Thriller • 1h 41min</p>
+                <p>An ex-hitman comes out of retirement to track down the gangsters who killed his dog and stole his car.</p>
+                <a href="#" class="btn">See Details</a>
+            </div>
+        </div>
+        
+        <!-- Comedy & Fun -->
+        <div class="movie-recommendation" data-mood="comedy">
+            <div class="rec-poster">
+                <img src="Images and video/Shawnshank.jpg" alt="The Grand Budapest Hotel">
+            </div>
+            <div class="rec-info">
+                <h3>The Grand Budapest Hotel (2014)</h3>
+                <p>⭐ 8.1/10 • 900K votes • Adventure, Comedy, Crime • 1h 39min</p>
+                <p>A writer encounters the owner of an aging high-class hotel, who tells him of his early years serving as a lobby boy in the hotel's glorious years under an exceptional concierge.</p>
+                <a href="#" class="btn">See Details</a>
+            </div>
+        </div>
+        
+        <div class="movie-recommendation" data-mood="comedy">
+            <div class="rec-poster">
+                <img src="Images and video/Shawnshank.jpg" alt="Superbad">
+            </div>
+            <div class="rec-info">
+                <h3>Superbad (2007)</h3>
+                <p>⭐ 7.6/10 • 600K votes • Comedy • 1h 53min</p>
+                <p>Two co-dependent high school seniors are forced to deal with separation anxiety after their plan to stage a booze-filled party goes awry.</p>
+                <a href="#" class="btn">See Details</a>
+            </div>
+        </div>
+        
+        <!-- Drama & Emotion -->
+        <div class="movie-recommendation" data-mood="drama">
+            <div class="rec-poster">
+                <img src="Images and video/Shawnshank.jpg" alt="The Shawshank Redemption">
+            </div>
+            <div class="rec-info">
+                <h3>The Shawshank Redemption (1994)</h3>
+                <p>⭐ 9.3/10 • 2.8M votes • Drama • 2h 22min</p>
+                <p>Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.</p>
+                <a href="#" class="btn">See Details</a>
+            </div>
+        </div>
+        
+        <div class="movie-recommendation" data-mood="drama">
+            <div class="rec-poster">
+                <img src="Images and video/Shawnshank.jpg" alt="Forrest Gump">
+            </div>
+            <div class="rec-info">
+                <h3>Forrest Gump (1994)</h3>
+                <p>⭐ 8.8/10 • 2.1M votes • Drama, Romance • 2h 22min</p>
+                <p>The presidencies of Kennedy and Johnson, the events of Vietnam, Watergate, and other historical events unfold through the perspective of an Alabama man with an IQ of 75.</p>
+                <a href="#" class="btn">See Details</a>
+            </div>
+        </div>
+        
+        <!-- Romance & Love -->
+        <div class="movie-recommendation" data-mood="romance">
+            <div class="rec-poster">
+                <img src="Images and video/Shawnshank.jpg" alt="The Notebook">
+            </div>
+            <div class="rec-info">
+                <h3>The Notebook (2004)</h3>
+                <p>⭐ 7.8/10 • 600K votes • Drama, Romance • 2h 3min</p>
+                <p>A poor yet passionate young man falls in love with a rich young woman, giving her a sense of freedom, but they are soon separated because of their social differences.</p>
+                <a href="#" class="btn">See Details</a>
+            </div>
+        </div>
+        
+        <div class="movie-recommendation" data-mood="romance">
+            <div class="rec-poster">
+                <img src="Images and video/Shawnshank.jpg" alt="La La Land">
+            </div>
+            <div class="rec-info">
+                <h3>La La Land (2016)</h3>
+                <p>⭐ 8.0/10 • 650K votes • Comedy, Drama, Music • 2h 8min</p>
+                <p>While navigating their careers in Los Angeles, a pianist and an actress fall in love while attempting to reconcile their aspirations for the future.</p>
+                <a href="#" class="btn">See Details</a>
+            </div>
+        </div>
+        
+        <!-- Sci-Fi & Fantasy -->
+        <div class="movie-recommendation" data-mood="scifi">
+            <div class="rec-poster">
+                <img src="Images and video/Shawnshank.jpg" alt="Inception">
+            </div>
+            <div class="rec-info">
+                <h3>Inception (2010)</h3>
+                <p>⭐ 8.8/10 • 2.4M votes • Action, Adventure, Sci-Fi • 2h 28min</p>
+                <p>A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.</p>
+                <a href="#" class="btn">See Details</a>
+            </div>
+        </div>
+        
+        <div class="movie-recommendation" data-mood="scifi">
+            <div class="rec-poster">
+                <img src="Images and video/Shawnshank.jpg" alt="Interstellar">
+            </div>
+            <div class="rec-info">
+                <h3>Interstellar (2014)</h3>
+                <p>⭐ 8.6/10 • 2M votes • Adventure, Drama, Sci-Fi • 2h 49min</p>
+                <p>A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.</p>
+                <a href="#" class="btn">See Details</a>
+            </div>
+        </div>
+        
+        <!-- Thriller & Mystery -->
+        <div class="movie-recommendation" data-mood="thriller">
+            <div class="rec-poster">
+                <img src="Images and video/Shawnshank.jpg" alt="Se7en">
+            </div>
+            <div class="rec-info">
+                <h3>Se7en (1995)</h3>
+                <p>⭐ 8.6/10 • 1.7M votes • Crime, Drama, Mystery • 2h 7min</p>
+                <p>Two detectives, a rookie and a veteran, hunt a serial killer who uses the seven deadly sins as his motives.</p>
+                <a href="#" class="btn">See Details</a>
+            </div>
+        </div>
+        
+        <div class="movie-recommendation" data-mood="thriller">
+            <div class="rec-poster">
+                <img src="Images and video/Shawnshank.jpg" alt="The Silence of the Lambs">
+            </div>
+            <div class="rec-info">
+                <h3>The Silence of the Lambs (1991)</h3>
+                <p>⭐ 8.6/10 • 1.5M votes • Crime, Drama, Thriller • 1h 58min</p>
+                <p>A young F.B.I. cadet must receive the help of an incarcerated and manipulative cannibal killer to help catch another serial killer, a madman who skins his victims.</p>
+                <a href="#" class="btn">See Details</a>
+            </div>
+        </div>
+        
+        <!-- Family & Kids -->
+        <div class="movie-recommendation" data-mood="family">
+            <div class="rec-poster">
+                <img src="Images and video/Shawnshank.jpg" alt="Toy Story">
+            </div>
+            <div class="rec-info">
+                <h3>Toy Story (1995)</h3>
+                <p>⭐ 8.3/10 • 1M votes • Animation, Adventure, Comedy • 1h 21min</p>
+                <p>A cowboy doll is profoundly threatened and jealous when a new spaceman figure supplants him as top toy in a boy's room.</p>
+                <a href="#" class="btn">See Details</a>
+            </div>
+        </div>
+        
+        <div class="movie-recommendation" data-mood="family">
+            <div class="rec-poster">
+                <img src="Images and video/Shawnshank.jpg" alt="Spirited Away">
+            </div>
+            <div class="rec-info">
+                <h3>Spirited Away (2001)</h3>
+                <p>⭐ 8.6/10 • 850K votes • Animation, Adventure, Family • 2h 5min</p>
+                <p>During her family's move to the suburbs, a sullen 10-year-old girl wanders into a world ruled by gods, witches, and spirits, and where humans are changed into beasts.</p>
+                <a href="#" class="btn">See Details</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Personalized Recommendation -->
+    <div class="personal-recommendation">
+        <h3>🎯 Personalized Recommendation</h3>
+        <p>Based on your viewing history and ratings, we recommend:</p>
+        <div class="personal-movie">
+            <div class="personal-poster">
+                <img src="Images and video/Shawnshank.jpg" alt="The Dark Knight">
+            </div>
+            <div class="personal-info">
+                <h2>The Dark Knight (2008)</h2>
+                <p>⭐ 9.0/10 • 2.7M votes • Action, Crime, Drama • 2h 32min</p>
+                <p>When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.</p>
+                <p><strong>Why you'll like it:</strong> You rated similar action movies highly and enjoy complex characters.</p>
+                <a href="#" class="btn">Start Watching</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>Contact us: <a href="mailto:contact@moviesphere.com">contact@moviesphere.com</a></p>
+    <p>Follow us: 
+        <a href="#">Twitter</a> | 
+        <a href="#">Facebook</a> | 
+        <a href="#">Instagram</a>
+    </p>
+    <p>© 2026 MovieSphere. All movie data is for educational purposes.</p>
+    <p>This site is inspired by IMDb but created for educational use.</p>
+</footer>
+
+<script>
+// Mood filter functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const moodButtons = document.querySelectorAll('.mood-btn');
+    const movieRecommendations = document.querySelectorAll('.movie-recommendation');
+    
+    moodButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class from all buttons
+            moodButtons.forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            const selectedMood = this.getAttribute('data-mood');
+            
+            // Show/hide movies based on mood
+            movieRecommendations.forEach(movie => {
+                if (selectedMood === 'all') {
+                    movie.style.display = 'flex';
+                } else if (movie.getAttribute('data-mood') === selectedMood) {
+                    movie.style.display = 'flex';
+                } else {
+                    movie.style.display = 'none';
+                }
+            });
+        });
+    });
+});
+</script>
+
+<style>
+/* What to Watch Page Styles */
+.mood-selector {
+    text-align: center;
+    margin: 40px 0;
+    padding: 30px;
+    background: #1a1a1a;
+    border-radius: 10px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mood-selector h3 {
+    color: #f5c518;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.mood-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.mood-btn {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.mood-btn:hover {
+    background: #444;
+    transform: translateY(-2px);
+}
+
+.mood-btn.active {
+    background: #f5c518;
+    color: #000;
+    font-weight: bold;
+}
+
+.recommendations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.movie-recommendation {
+    background: #1a1a1a;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s;
+    border: 1px solid #333;
+}
+
+.movie-recommendation:hover {
+    transform: translateY(-5px);
+    border-color: #f5c518;
+}
+
+.rec-poster {
+    height: 200px;
+    overflow: hidden;
+}
+
+.rec-poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.movie-recommendation:hover .rec-poster img {
+    transform: scale(1.05);
+}
+
+.rec-info {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.rec-info h3 {
+    color: white;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.rec-info p {
+    color: #ccc;
+    margin-bottom: 15px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.rec-info .btn {
+    margin-top: auto;
+    background: #00a8ff;
+    text-align: center;
+}
+
+.personal-recommendation {
+    background: #1a1a1a;
+    border-radius: 10px;
+    padding: 30px;
+    margin-top: 50px;
+    border: 2px solid #f5c518;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.personal-recommendation h3 {
+    color: #f5c518;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.personal-recommendation > p {
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.personal-movie {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+.personal-poster {
+    width: 150px;
+    flex-shrink: 0;
+}
+
+.personal-poster img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.personal-info {
+    flex: 1;
+}
+
+.personal-info h2 {
+    color: white;
+    margin-bottom: 10px;
+}
+
+.personal-info p {
+    color: #ccc;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.personal-info .btn {
+    background: #f5c518;
+    color: #000;
+    font-weight: bold;
+}
+
+/* Light Theme Styles */
+body.light .mood-selector,
+body.light .movie-recommendation,
+body.light .personal-recommendation {
+    background: #fff;
+    border: 1px solid #ddd;
+}
+
+body.light .mood-btn {
+    background: #eee;
+    color: #333;
+}
+
+body.light .mood-btn:hover {
+    background: #ddd;
+}
+
+body.light .mood-btn.active {
+    background: #f5c518;
+    color: #000;
+}
+
+body.light .rec-info h3,
+body.light .personal-info h2 {
+    color: #333;
+}
+
+body.light .rec-info p,
+body.light .personal-info p,
+body.light .personal-recommendation > p {
+    color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .recommendations-grid {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+    }
+    
+    .mood-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .mood-btn {
+        width: 80%;
+        justify-content: center;
+    }
+    
+    .personal-movie {
+        flex-direction: column;
+    }
+    
+    .personal-poster {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .personal-poster img {
+        width: 150px;
+        height: 225px;
+        object-fit: cover;
+    }
+}
+
+@media (max-width: 480px) {
+    .mood-selector,
+    .personal-recommendation {
+        padding: 20px;
+        margin: 20px;
+    }
+    
+    .rec-poster {
+        height: 150px;
+    }
+}
+</style>
+</body>
+</html>
