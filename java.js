@@ -372,15 +372,6 @@ function showAlert(message, type) {
     document.head.appendChild(style);
 }
 
-// Language selector
-const languageSelector = document.querySelector('.language-selector');
-if (languageSelector) {
-    languageSelector.addEventListener('change', function() {
-        const language = this.value;
-        showAlert(`Language changed to ${language.toUpperCase()}`, 'info');
-    });
-}
-
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
