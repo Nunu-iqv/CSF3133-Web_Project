@@ -5,633 +5,708 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PopCornPrise | Movie Reviews</title>
     <link rel="stylesheet" href="style.css">
-    <script src="java.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
+    <!-- Header -->
+    <header>
+        <div class="top-bar">
+            <div class="logo-section">
+                <a href="index.html" class="logo">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2503/2503508.png" alt="PopCornPrise">
+                    <span>PopCornPrise</span>
+                </a>
+                
+                <button class="theme-btn" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                
+                <select class="language-selector">
+                    <option value="en">EN</option>
+                    <option value="ms">MS</option>
+                </select>
+            </div>
 
-<header>
-    <div class="top-bar">
-        <div style="display: flex; align-items: center; gap: 15px;">
-            <a href="index.html" class="logo">
-                <img src="https://cdn-icons-png.flaticon.com/512/2503/2503508.png" alt="PopCornPrise">
-                PopCornPrise
-            </a>
+            <div class="search-section">
+                <input type="text" class="search-bar" placeholder="Search movies, actors, directors...">
+            </div>
+
+            <div class="user-section">
+                <button class="mobile-menu-btn" id="mobileBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <a href="#" class="pro-btn">PopCorn Pro</a>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="main-nav" id="mainNav">
+            <div class="nav-container">
+                <div class="dropdown">
+                    <button class="nav-btn">
+                        <i class="fas fa-film"></i> Movies
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="#trending">Trending Now</a>
+                        <a href="#upcoming">Upcoming</a>
+                        <a href="#now-playing">Now Playing</a>
+                        <a href="#top-rated">Top Rated</a>
+                    </div>
+                </div>
+                
+                <div class="dropdown">
+                    <button class="nav-btn">
+                        <i class="fas fa-award"></i> Awards
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="oscars.html">
+                            <i class="fas fa-trophy"></i> Oscars 2024
+                        </a>
+                        <a href="emmys.html">
+                            <i class="fas fa-tv"></i> Emmys 2024
+                        </a>
+                        <a href="#golden-globes">
+                            <i class="fas fa-globe-americas"></i> Golden Globes
+                        </a>
+                        <a href="#cannes">
+                            <i class="fas fa-palette"></i> Cannes Festival
+                        </a>
+                    </div>
+                </div>
+                
+                <a href="#community" class="nav-btn">
+                    <i class="fas fa-users"></i> Community
+                </a>
+                <a href="#about" class="nav-btn">
+                    <i class="fas fa-info-circle"></i> About Us
+                </a>
+                <a href="#reviews" class="nav-btn">
+                    <i class="fas fa-star"></i> Reviews
+                </a>
+                <a href="#submit" class="nav-btn">
+                    <i class="fas fa-edit"></i> Submit Review
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Banner Slider -->
+    <section class="banner-section">
+        <div class="banner-slider">
+            <div class="slide active">
+                <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Movie Banner 1">
+                <div class="slide-content">
+                    <h2>Featured: Dune Part Two</h2>
+                    <p>Experience the epic continuation of the saga that captivated millions</p>
+                    <a href="#" class="slide-btn">Watch Trailer</a>
+                </div>
+            </div>
             
-            <button class="theme-btn" id="themeToggle">
-                <i class="fas fa-moon"></i>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1595769812725-4c6564ca7837?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Movie Banner 2">
+                <div class="slide-content">
+                    <h2>Oscar Winner 2024</h2>
+                    <p>Oppenheimer - 7 Academy Awards including Best Picture</p>
+                    <a href="#" class="slide-btn">View Details</a>
+                </div>
+            </div>
+            
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1489599809516-9827b6d1cf13?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Movie Banner 3">
+                <div class="slide-content">
+                    <h2>Coming Soon</h2>
+                    <p>Deadpool & Wolverine - The most anticipated movie of 2024</p>
+                    <a href="#" class="slide-btn">Learn More</a>
+                </div>
+            </div>
+            
+            <button class="slider-btn prev-btn">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="slider-btn next-btn">
+                <i class="fas fa-chevron-right"></i>
             </button>
             
-            <select class="language-selector">
-                <option value="en">EN</option>
-                <option value="ms">MS</option>
-            </select>
+            <div class="slider-dots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
+            </div>
         </div>
+    </section>
 
-        <input type="text" class="search-bar" placeholder="Search PopCornPrise...">
-
-        <div class="imdb-pro">
-            <button class="mobile-menu-btn" id="mobileBtn">
-                <i class="fas fa-bars"></i>
-            </button>
+    <!-- Featured Movies Section -->
+    <section class="featured-section" id="trending">
+        <div class="section-header">
+            <h2><i class="fas fa-fire"></i> Trending Movies</h2>
+            <a href="#" class="view-all">View All</a>
         </div>
-    </div>
-
-    <nav class="main-nav" id="mainNav">
-        <div class="dropdown">
-            <button class="dropdown-btn">Movie <i class="fas fa-caret-down"></i></button>
-            <div class="dropdown-content">
-               <a href="#trending-section">Trending Now</a>
-               <a href="#upcoming-section">Upcoming</a>
-             </div>
-         </div>
         
-        <div class="dropdown">
-            <button class="dropdown-btn">Genre <i class="fas fa-caret-down"></i></button>
-            <div class="dropdown-content">
-                <a href="#">Romantic</a>
-                <a href="#">Crime</a>
-                <a href="#">Animation</a>
-                <a href="#">Horror</a>
-                <a href="#">Comedy</a>
+        <div class="movies-grid">
+            <div class="movie-card">
+                <div class="movie-poster">
+                    <img src="https://m.media-amazon.com/images/M/MV5BMDdmZjBmYmEtM2M2My00ZDQ3LWIzNmMtOGFkYjQ1Yzg1OGFjXkEyXkFqcGdeQXVyNTE1NjY5Mg@@._V1_FMjpg_UX1000_.jpg" alt="Dune Part Two">
+                    <div class="movie-rating">8.7</div>
+                    <div class="movie-overlay">
+                        <button class="watchlist-btn">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="movie-info">
+                    <h3>Dune: Part Two</h3>
+                    <div class="movie-meta">
+                        <span>2024</span>
+                        <span>2h 46m</span>
+                        <span>Sci-Fi</span>
+                    </div>
+                    <p class="movie-desc">Paul Atreides unites with Chani and the Fremen while seeking revenge against those who destroyed his family.</p>
+                    <div class="movie-actions">
+                        <a href="#" class="action-btn">
+                            <i class="fas fa-play"></i> Trailer
+                        </a>
+                        <a href="#" class="action-btn">
+                            <i class="fas fa-star"></i> Rate
+                        </a>
+                    </div>
+                </div>
             </div>
-        </div>
-
-        <a href="#" class="dropdown-btn">New Movie</a>
-        <a href="#" class="dropdown-btn">Best Movie</a>
-        <a href="#" class="dropdown-btn">Worst Movie</a>
-        <a href="#" class="dropdown-btn">Review</a>
-        <a href="#" class="dropdown-btn">About</a>
-        
-        
-    </nav>
-</header>
-
-<section class="banner-container">
-    <div class="slideshow-container">
-        <div class="mySlides fade">
-            <img src="seven2.jpeg" alt="Banner 1">
-            <div class="banner-text">Featured: White Chicks (20th Anniversary)</div>
-        </div>
-        <div class="mySlides fade">
-            <img src="whitechick3.jpg" alt="Banner 2">
-            <div class="banner-text">Now Trending: Dune Part Two</div>
-        </div>
-        <div class="mySlides fade">
-            <img src="Elemental2.jpg" alt="Banner 3">
-            <div class="banner-text">Coming Soon: Deadpool & Wolverine</div>
-        </div>
-
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-    </div>
-    
-    <div style="text-align:center; margin-top: -30px; position: relative; z-index: 10;">
-        <span class="dot" onclick="currentSlide(1)"></span> 
-        <span class="dot" onclick="currentSlide(2)"></span> 
-        <span class="dot" onclick="currentSlide(3)"></span> 
-    </div>
-</section>
-
-<section class="slider-section" id = "trending-section">
-    <h2><i class="fas fa-fire" style="color: #f5c518;"></i> Trending Movies</h2>
-    <div class="movie-slider">
-        <a href="Whitechick.html" style="text-decoration: none; color: inherit;">
-    <div class="movie-card">
-        <img src="Whitechickposter.jpg" alt="Whitechick">
-        <div class="movie-info">
-            <h3>White Chick 2004</h3>
-            <p class="review-stars">★ 4.5</p>
-        </div>
-    </div>
-</a>
-        <div class="movie-card">
-            <img src=".jpg" alt="Movie 2">
-            <div class="movie-info">
-                <h3>Poor Things</h3>
-                <p class="review-stars">★ 8.2</p>
-            </div>
-        </div>
-        <div class="movie-card">
-            <img src=".jpg" alt="Movie 10">
-            <div class="movie-info">
-                <h3>Dune: Part Two</h3>
-                <p class="review-stars">★ 9.0</p>
-            </div>
-        </div>
-      
-         <div class="movie-card">
-            <img src=".jpg" alt="Movie 2">
-            <div class="movie-info">
-                <h3>Poor Things</h3>
-                <p class="review-stars">★ 8.2</p>
-            </div>
-        </div>
-
-         <div class="movie-card">
-            <img src=".jpg" alt="Movie 2">
-            <div class="movie-info">
-                <h3>Poor Things</h3>
-                <p class="review-stars">★ 8.2</p>
-            </div>
-        </div>
-
-         <div class="movie-card">
-            <img src=".jpg" alt="Movie 2">
-            <div class="movie-info">
-                <h3>Poor Things</h3>
-                <p class="review-stars">★ 8.2</p>
-            </div>
-        </div>
-
-         <div class="movie-card">
-            <img src=".jpg" alt="Movie 2">
-            <div class="movie-info">
-                <h3>Poor Things</h3>
-                <p class="review-stars">★ 8.2</p>
-            </div>
-        </div>
-
-         <div class="movie-card">
-            <img src=".jpg" alt="Movie 2">
-            <div class="movie-info">
-                <h3>Poor Things</h3>
-                <p class="review-stars">★ 8.2</p>
-            </div>
-        </div>
-
-         <div class="movie-card">
-            <img src=".jpg" alt="Movie 2">
-            <div class="movie-info">
-                <h3>Poor Things</h3>
-                <p class="review-stars">★ 8.2</p>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-<section class="slider-section" id = "upcoming-section">
-    <h2><i class="fas fa-calendar-alt" style="color: #f5c518;"></i> Upcoming Movies</h2>
-    <div class="movie-slider">
-        <div class="movie-card">
-            <img src=".jpg" alt="Upcoming 1">
-            <div class="movie-info">
-                <h3>Deadpool & Wolverine</h3>
-                <p class="review-stars">Coming Soon</p>
-            </div>
-        </div>
-
-
-        <div class="movie-card">
-            <img src=".jpg" alt="Upcoming 1">
-            <div class="movie-info">
-                <h3>Deadpool & Wolverine</h3>
-                <p class="review-stars">Coming Soon</p>
-            </div>
-        </div>
-
-        <div class="movie-card">
-            <img src=".jpg" alt="Upcoming 1">
-            <div class="movie-info">
-                <h3>Deadpool & Wolverine</h3>
-                <p class="review-stars">Coming Soon</p>
-            </div>
-        </div>
-
-        <div class="movie-card">
-            <img src=".jpg" alt="Upcoming 1">
-            <div class="movie-info">
-                <h3>Deadpool & Wolverine</h3>
-                <p class="review-stars">Coming Soon</p>
-            </div>
-        </div>
-
-        <div class="movie-card">
-            <img src=".jpg" alt="Upcoming 1">
-            <div class="movie-info">
-                <h3>Deadpool & Wolverine</h3>
-                <p class="review-stars">Coming Soon</p>
-            </div>
-        </div>
-
-        <div class="movie-card">
-            <img src=".jpg" alt="Upcoming 1">
-            <div class="movie-info">
-                <h3>Deadpool & Wolverine</h3>
-                <p class="review-stars">Coming Soon</p>
-            </div>
-        </div>
-
-        <div class="movie-card">
-            <img src=".jpg" alt="Upcoming 1">
-            <div class="movie-info">
-                <h3>Deadpool & Wolverine</h3>
-                <p class="review-stars">Coming Soon</p>
-            </div>
-        </div>
-
-        <div class="movie-card">
-            <img src=".jpg" alt="Upcoming 1">
-            <div class="movie-info">
-                <h3>Deadpool & Wolverine</h3>
-                <p class="review-stars">Coming Soon</p>
-            </div>
-        </div>
-        </div>
-
-    <section class="ranking-section">
-    <h2 class="section-title">PopCornPrise Top Rankings</h2>
-    <table class="aesthetic-table">
-        <thead>
-            <tr>
-                <th>Rank</th>
-                <th>Movie</th>
-                <th>Rating</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td class="rank-number">1</td>
-                <td class="movie-cell">
-                    <span>The Godfather</span>
-                </td>
-                <td class="rating-cell"><i class="fas fa-star"></i> 9.2</td>
-            </tr>
-            <tr>
-                <td class="rank-number">2</td>
-                <td class="movie-cell">
-                    <span>The Dark Knight</span>
-                </td>
-                <td class="rating-cell"><i class="fas fa-star"></i> 9.0</td>
-            </tr>
-            <tr>
-                <td class="rank-number">3</td>
-                <td class="movie-cell">
-                    <span>Dune: Part Two</span>
-                </td>
-                <td class="rating-cell"><i class="fas fa-star"></i> 8.9</td>
-            </tr>
-
-            <tr>
-                <td class="rank-number">4</td>
-                <td class="movie-cell">
-                    <span>Dune: Part Two</span>
-                </td>
-                <td class="rating-cell"><i class="fas fa-star"></i> 8.9</td>
-            </tr>
-
-            <tr>
-                <td class="rank-number">5</td>
-                <td class="movie-cell">
-                    <span>Dune: Part Two</span>
-                </td>
-                <td class="rating-cell"><i class="fas fa-star"></i> 8.9</td>
-            </tr>
-
-            <tr>
-                <td class="rank-number">6</td>
-                <td class="movie-cell">
-                    <span>Dune: Part Two</span>
-                </td>
-                <td class="rating-cell"><i class="fas fa-star"></i> 8.9</td>
-            </tr>
-
-            <tr>
-                <td class="rank-number">7</td>
-                <td class="movie-cell">
-                    <span>Dune: Part Two</span>
-                </td>
-                <td class="rating-cell"><i class="fas fa-star"></i> 8.9</td>
-            </tr>
-
-            <tr>
-                <td class="rank-number">8</td>
-                <td class="movie-cell">
-                    <span>Dune: Part Two</span>
-                </td>
-                <td class="rating-cell"><i class="fas fa-star"></i> 8.9</td>
-            </tr>
-
-            <tr>
-                <td class="rank-number">9</td>
-                <td class="movie-cell">
-                    <span>Dune: Part Two</span>
-                </td>
-                <td class="rating-cell"><i class="fas fa-star"></i> 8.9</td>
-            </tr>
-
-            <tr>
-                <td class="rank-number">10</td>
-                <td class="movie-cell">
-                    <span>Dune: Part Two</span>
-                </td>
-                <td class="rating-cell"><i class="fas fa-star"></i> 8.9</td>
-            </tr>
-
             
+            <div class="movie-card">
+                <div class="movie-poster">
+                    <img src="https://m.media-amazon.com/images/M/MV5BMDBmYTZjNjUtN2M1MS00MTQ2LTk2ODgtNzc2M2QyZGE5NTVjXkEyXkFqcGdeQXVyNzAwMjU2MTY@._V1_FMjpg_UX1000_.jpg" alt="Oppenheimer">
+                    <div class="movie-rating">8.3</div>
+                    <div class="movie-overlay">
+                        <button class="watchlist-btn">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="movie-info">
+                    <h3>Oppenheimer</h3>
+                    <div class="movie-meta">
+                        <span>2023</span>
+                        <span>3h</span>
+                        <span>Biography</span>
+                    </div>
+                    <p class="movie-desc">The story of American scientist J. Robert Oppenheimer and his role in the development of the atomic bomb.</p>
+                    <div class="movie-actions">
+                        <a href="#" class="action-btn">
+                            <i class="fas fa-play"></i> Trailer
+                        </a>
+                        <a href="#" class="action-btn">
+                            <i class="fas fa-star"></i> Rate
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="movie-card">
+                <div class="movie-poster">
+                    <img src="https://m.media-amazon.com/images/M/MV5BNGIyYWMzNjktNDE3MC00YWQyLWEyMmEtN2ZmNzZhZDk3NGJlXkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_FMjpg_UX1000_.jpg" alt="Poor Things">
+                    <div class="movie-rating">8.2</div>
+                    <div class="movie-overlay">
+                        <button class="watchlist-btn">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="movie-info">
+                    <h3>Poor Things</h3>
+                    <div class="movie-meta">
+                        <span>2023</span>
+                        <span>2h 21m</span>
+                        <span>Comedy</span>
+                    </div>
+                    <p class="movie-desc">The incredible tale about the fantastical evolution of Bella Baxter, a young woman brought back to life.</p>
+                    <div class="movie-actions">
+                        <a href="#" class="action-btn">
+                            <i class="fas fa-play"></i> Trailer
+                        </a>
+                        <a href="#" class="action-btn">
+                            <i class="fas fa-star"></i> Rate
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="movie-card">
+                <div class="movie-poster">
+                    <img src="https://m.media-amazon.com/images/M/MV5BOTQ1MzU5ODgtYTgwMC00NWU3LTk3Y2UtYjU1Zjc0NmY3YmNmXkEyXkFqcGdeQXVyMTA3MDk2NDg2._V1_FMjpg_UX1000_.jpg" alt="The Zone of Interest">
+                    <div class="movie-rating">7.9</div>
+                    <div class="movie-overlay">
+                        <button class="watchlist-btn">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="movie-info">
+                    <h3>The Zone of Interest</h3>
+                    <div class="movie-meta">
+                        <span>2023</span>
+                        <span>1h 45m</span>
+                        <span>Drama</span>
+                    </div>
+                    <p class="movie-desc">The commandant of Auschwitz, Rudolf Höss, and his wife Hedwig strive to build a dream life.</p>
+                    <div class="movie-actions">
+                        <a href="#" class="action-btn">
+                            <i class="fas fa-play"></i> Trailer
+                        </a>
+                        <a href="#" class="action-btn">
+                            <i class="fas fa-star"></i> Rate
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        </tbody>
-    </table>
-</section>
+    <!-- Upcoming Movies -->
+    <section class="upcoming-section" id="upcoming">
+        <div class="section-header">
+            <h2><i class="fas fa-calendar-alt"></i> Upcoming Movies</h2>
+            <a href="#" class="view-all">View All</a>
+        </div>
+        
+        <div class="movies-scroll">
+            <div class="upcoming-card">
+                <div class="upcoming-date">
+                    <span class="date-day">26</span>
+                    <span class="date-month">JUL</span>
+                </div>
+                <img src="https://m.media-amazon.com/images/M/MV5BMDIyOTZmMWYtNTQ3Yy00NzRjLTg1ZDQtYjQ5M2UwN2U5NjY3XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_FMjpg_UX1000_.jpg" alt="Deadpool & Wolverine">
+                <div class="upcoming-info">
+                    <h4>Deadpool & Wolverine</h4>
+                    <p>Action, Comedy</p>
+                    <div class="upcoming-status">
+                        <i class="fas fa-clock"></i> Coming Soon
+                    </div>
+                </div>
+            </div>
+            
+            <div class="upcoming-card">
+                <div class="upcoming-date">
+                    <span class="date-day">04</span>
+                    <span class="date-month">OCT</span>
+                </div>
+                <img src="https://m.media-amazon.com/images/M/MV5BY2U2N2Q1OTQtYjhiNy00YjUxLWE5MzYtMzJjYmFiMzY3Y2RhXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_FMjpg_UX1000_.jpg" alt="Joker 2">
+                <div class="upcoming-info">
+                    <h4>Joker: Folie à Deux</h4>
+                    <p>Crime, Drama</p>
+                    <div class="upcoming-status">
+                        <i class="fas fa-clock"></i> Coming Soon
+                    </div>
+                </div>
+            </div>
+            
+            <div class="upcoming-card">
+                <div class="upcoming-date">
+                    <span class="date-day">19</span>
+                    <span class="date-month">DEC</span>
+                </div>
+                <img src="https://m.media-amazon.com/images/M/MV5BMTQ2MDA5NjYwMl5BMl5BanBnXkFtZTgwNTA2MjE5MDI@._V1_FMjpg_UX1000_.jpg" alt="Avatar 3">
+                <div class="upcoming-info">
+                    <h4>Avatar 3</h4>
+                    <p>Action, Adventure</p>
+                    <div class="upcoming-status">
+                        <i class="fas fa-clock"></i> Coming Soon
+                    </div>
+                </div>
+            </div>
+            
+            <div class="upcoming-card">
+                <div class="upcoming-date">
+                    <span class="date-day">15</span>
+                    <span class="date-month">NOV</span>
+                </div>
+                <img src="https://m.media-amazon.com/images/M/MV5BN2ZmM2MzgtMjgwNy00ZGI0LWIwNDMtN2UwNTU4MzRiZDU2XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_FMjpg_UX1000_.jpg" alt="Gladiator II">
+                <div class="upcoming-info">
+                    <h4>Gladiator II</h4>
+                    <p>Action, Drama</p>
+                    <div class="upcoming-status">
+                        <i class="fas fa-clock"></i> Coming Soon
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Community Section -->
+    <section class="community-section" id="community">
+        <div class="section-header">
+            <h2><i class="fas fa-users"></i> Community</h2>
+        </div>
+        
+        <div class="community-container">
+            <div class="community-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>250,000+</h3>
+                        <p>Active Members</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>1.2M+</h3>
+                        <p>Discussions</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>5M+</h3>
+                        <p>Reviews Posted</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>50,000+</h3>
+                        <p>Movies Rated</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="discussion-forum">
+                <h3>Latest Discussions</h3>
+                <div class="discussion-list">
+                    <div class="discussion-item">
+                        <div class="discussion-icon">
+                            <i class="fas fa-film"></i>
+                        </div>
+                        <div class="discussion-content">
+                            <h4>Best Movies of 2024 So Far?</h4>
+                            <div class="discussion-meta">
+                                <span><i class="fas fa-user"></i> MovieFan42</span>
+                                <span><i class="fas fa-comment"></i> 245 replies</span>
+                                <span><i class="fas fa-eye"></i> 1.2K views</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="discussion-item">
+                        <div class="discussion-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="discussion-content">
+                            <h4>Underrated Sci-Fi Gems</h4>
+                            <div class="discussion-meta">
+                                <span><i class="fas fa-user"></i> SciFiLover</span>
+                                <span><i class="fas fa-comment"></i> 189 replies</span>
+                                <span><i class="fas fa-eye"></i> 980 views</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="discussion-item">
+                        <div class="discussion-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <div class="discussion-content">
+                            <h4>Christopher Nolan's Filmography Ranked</h4>
+                            <div class="discussion-meta">
+                                <span><i class="fas fa-user"></i> CinemaBuff</span>
+                                <span><i class="fas fa-comment"></i> 312 replies</span>
+                                <span><i class="fas fa-eye"></i> 1.5K views</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="#" class="forum-link">
+                    Join the Discussion <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
 
+    <!-- Top Rankings -->
+    <section class="ranking-section" id="ranking">
+        <div class="section-header">
+            <h2><i class="fas fa-chart-line"></i> Top Rankings</h2>
+        </div>
+        
+        <div class="ranking-container">
+            <div class="ranking-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Movie</th>
+                            <th>Year</th>
+                            <th>Rating</th>
+                            <th>Votes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="rank-number">1</td>
+                            <td class="movie-cell">
+                                <i class="fas fa-crown"></i>
+                                The Shawshank Redemption
+                            </td>
+                            <td>1994</td>
+                            <td><span class="rating-badge">9.3</span></td>
+                            <td>2.8M</td>
+                        </tr>
+                        <tr>
+                            <td class="rank-number">2</td>
+                            <td class="movie-cell">
+                                The Godfather
+                            </td>
+                            <td>1972</td>
+                            <td><span class="rating-badge">9.2</span></td>
+                            <td>1.9M</td>
+                        </tr>
+                        <tr>
+                            <td class="rank-number">3</td>
+                            <td class="movie-cell">
+                                The Dark Knight
+                            </td>
+                            <td>2008</td>
+                            <td><span class="rating-badge">9.0</span></td>
+                            <td>2.7M</td>
+                        </tr>
+                        <tr>
+                            <td class="rank-number">4</td>
+                            <td class="movie-cell">
+                                The Godfather Part II
+                            </td>
+                            <td>1974</td>
+                            <td><span class="rating-badge">9.0</span></td>
+                            <td>1.3M</td>
+                        </tr>
+                        <tr>
+                            <td class="rank-number">5</td>
+                            <td class="movie-cell">
+                                12 Angry Men
+                            </td>
+                            <td>1957</td>
+                            <td><span class="rating-badge">9.0</span></td>
+                            <td>836K</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about-section" id="about">
+        <div class="section-header">
+            <h2><i class="fas fa-info-circle"></i> About Us</h2>
+        </div>
+        
+        <div class="about-container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Our Mission</h3>
+                    <p>PopCornPrise was founded in 2026 with a simple mission: to create the most comprehensive, honest, and community-driven movie review platform. We believe every movie deserves fair critique and every viewer deserves trustworthy recommendations.</p>
+                    
+                    <h3>What Makes Us Different</h3>
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <h4>No Paid Reviews</h4>
+                            <p>Every rating is from genuine viewers</p>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h4>Community-Driven</h4>
+                            <p>Our users shape the platform</p>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <h4>Comprehensive Database</h4>
+                            <p>From classics to upcoming releases</p>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <h4>Global Perspective</h4>
+                            <p>Movies from every corner of the world</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-box">
+                    <h3>Contact Us</h3>
+                    <p>Have questions, suggestions, or partnership inquiries? We'd love to hear from you!</p>
+                    <div class="contact-info">
+                        <p><i class="fas fa-envelope"></i> contact@popcornprise.com</p>
+                        <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    </div>
+                    <a href="mailto:contact@popcornprise.com" class="contact-btn">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Submit Review Section -->
+    <section class="submit-section" id="submit">
+        <div class="section-header">
+            <h2><i class="fas fa-edit"></i> Submit Your Review</h2>
+        </div>
+        
+        <div class="submit-container">
+            <form class="review-form" id="reviewForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">
+                            <i class="fas fa-user"></i> Your Name
+                        </label>
+                        <input type="text" id="name" placeholder="Enter your name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">
+                            <i class="fas fa-envelope"></i> Your Email
+                        </label>
+                        <input type="email" id="email" placeholder="Enter your email" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="movie">
+                        <i class="fas fa-film"></i> Movie Title
+                    </label>
+                    <input type="text" id="movie" placeholder="Enter movie title" required>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="rating">
+                            <i class="fas fa-star"></i> Rating
+                        </label>
+                        <select id="rating" required>
+                            <option value="">Select Rating</option>
+                            <option value="5">⭐⭐⭐⭐⭐ (Excellent)</option>
+                            <option value="4">⭐⭐⭐⭐ (Very Good)</option>
+                            <option value="3">⭐⭐⭐ (Good)</option>
+                            <option value="2">⭐⭐ (Fair)</option>
+                            <option value="1">⭐ (Poor)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="year">
+                            <i class="fas fa-calendar"></i> Release Year
+                        </label>
+                        <input type="number" id="year" min="1900" max="2024" placeholder="Year">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="review">
+                        <i class="fas fa-pen"></i> Your Review
+                    </label>
+                    <textarea id="review" placeholder="Write your detailed review here... (Minimum 50 characters)" 
+                            rows="6" 
+                            minlength="50" 
+                            required></textarea>
+                    <div class="char-count">
+                        <span id="charCount">0</span> / 500 characters
+                    </div>
+                </div>
+                
+                <div class="form-check">
+                    <input type="checkbox" id="agree" required>
+                    <label for="agree">I confirm this is my honest opinion and I have watched this movie</label>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> Submit Review
+                    </button>
+                    <button type="reset" class="reset-btn">
+                        <i class="fas fa-redo"></i> Clear Form
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2503/2503508.png" alt="PopCornPrise">
+                    <h3>PopCornPrise</h3>
+                </div>
+                <p>Your trusted movie review platform since 2026.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#trending">Trending Movies</a></li>
+                    <li><a href="#upcoming">Upcoming Movies</a></li>
+                    <li><a href="#community">Community</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#submit">Submit Review</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Awards</h4>
+                <ul>
+                    <li><a href="oscars.html">Oscars</a></li>
+                    <li><a href="emmys.html">Emmys</a></li>
+                    <li><a href="#golden-globes">Golden Globes</a></li>
+                    <li><a href="#cannes">Cannes Festival</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">DMCA</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 PopCornPrise. Built for Movie Lovers.</p>
+            <p>This site is inspired by IMDb but created for educational use.</p>
+        </div>
+    </footer>
 </body>
-
-<footer class="main-footer">
-    <div class="footer-content">
-            <span>PopCornPrise</span>
-        </div>
-        
-        <p>Your daily dose of cinema insights and honest reviews.</p>
-        
-        <div class="social-links">
-            <a href="https://instagram.com/yourprofile" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://twitter.com/yourprofile" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://facebook.com/yourprofile" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://youtube.com/yourprofile" target="_blank"><i class="fab fa-youtube"></i></a>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        &copy; 2026 PopCornPrise. Built for Movie Lovers.
-    </div>
-</footer>
-
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Segoe UI", sans-serif;
-}
-
-body {
-    background: #111;
-    color: white;
-}
-
-/* ========== HEADER ========== */
-header {
-    background: #000;
-    padding: 10px 20px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.top-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-    font-size: 22px;
-    color: #f5c518;
-    font-weight: bold;
-}
-
-.logo img {
-    width: 35px;
-}
-
-.search-bar {
-    width: 40%;
-    padding: 8px 15px;
-    border-radius: 20px;
-    border: none;
-    outline: none;
-    background: #222;
-    color: white;
-}
-
-.theme-btn {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
-}
-
-.language-selector {
-    background: #222;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 8px;
-}
-
-/* ========== NAV ========== */
-.main-nav {
-    display: flex;
-    gap: 25px;
-    padding-top: 15px;
-}
-
-.dropdown {
-    position: relative;
-}
-
-.dropdown-btn {
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background: #222;
-    padding: 10px;
-    border-radius: 10px;
-    top: 30px;
-}
-
-.dropdown-content a {
-    display: block;
-    padding: 8px;
-    color: white;
-    text-decoration: none;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* ========== SLIDER ========== */
-.banner-container {
-    margin-top: 10px;
-}
-
-.slideshow-container {
-    position: relative;
-}
-
-.mySlides img {
-    width: 100%;
-    height: 450px;
-    object-fit: cover;
-}
-
-.banner-text {
-    position: absolute;
-    bottom: 20px;
-    left: 30px;
-    font-size: 28px;
-    background: rgba(0,0,0,0.6);
-    padding: 10px 20px;
-    border-radius: 10px;
-}
-
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    font-size: 30px;
-    color: white;
-    cursor: pointer;
-    padding: 10px;
-}
-
-.next { right: 0; }
-
-.dot {
-    height: 12px;
-    width: 12px;
-    background: gray;
-    display: inline-block;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-/* ========== MOVIE SLIDER ========== */
-.slider-section {
-    padding: 30px;
-}
-
-.movie-slider {
-    display: flex;
-    overflow-x: auto;
-    gap: 20px;
-    padding-top: 15px;
-}
-
-.movie-card {
-    min-width: 200px;
-    background: #1c1c1c;
-    border-radius: 12px;
-    overflow: hidden;
-    transition: 0.3s;
-}
-
-.movie-card:hover {
-    transform: scale(1.05);
-}
-
-.movie-card img {
-    width: 100%;
-    height: 280px;
-    object-fit: cover;
-}
-
-.movie-info {
-    padding: 10px;
-}
-
-.review-stars {
-    color: #f5c518;
-}
-
-/* ========== RANKING TABLE ========== */
-.ranking-section {
-    padding: 40px;
-}
-
-.aesthetic-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.aesthetic-table th {
-    background: #f5c518;
-    color: black;
-    padding: 10px;
-}
-
-.aesthetic-table td {
-    padding: 10px;
-    background: #222;
-}
-
-/* ========== FOOTER ========== */
-.main-footer {
-    background: black;
-    text-align: center;
-    padding: 30px;
-}
-
-.social-links a {
-    color: white;
-    margin: 10px;
-    font-size: 20px;
-}
-
-
-let slideIndex = 1;
-showSlides(slideIndex);
-
-function plusSlides(n) {
-    showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-    showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-    let i;
-    let slides = document.getElementsByClassName("mySlides");
-    let dots = document.getElementsByClassName("dot");
-
-    if (n > slides.length) { slideIndex = 1 }
-    if (n < 1) { slideIndex = slides.length }
-
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-
-    for (i = 0; i < dots.length; i++) {
-        dots[i].style.background = "gray";
-    }
-
-    slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].style.background = "#f5c518";
-}
-
-/* Auto slide */
-setInterval(() => {
-    plusSlides(1);
-}, 4000);
-
-/* Dark Mode */
-const themeBtn = document.getElementById("themeToggle");
-
-themeBtn.addEventListener("click", () => {
-    document.body.classList.toggle("light-mode");
-
-    if (document.body.classList.contains("light-mode")) {
-        document.body.style.background = "#f4f4f4";
-        document.body.style.color = "#111";
-    } else {
-        document.body.style.background = "#111";
-        document.body.style.color = "white";
-    }
-});
-
-
 </html>
