@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Quiz | PopCornPrise</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Header (Same as your main site) -->
+    <header>
+        <div class="top-bar">
+            <div class="logo-section">
+                <a href="index.html" class="logo">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2503/2503508.png" alt="PopCornPrise">
+                    <span>PopCornPrise</span>
+                </a>
+                
+                <button class="theme-btn" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+
+            <div class="search-section">
+                <input type="text" class="search-bar" placeholder="Search movies, actors, directors...">
+            </div>
+
+            <div class="user-section">
+                <button class="mobile-menu-btn" id="mobileBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <a href="#" class="pro-btn">PopCorn Pro</a>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="main-nav" id="mainNav">
+            <div class="nav-container">
+                <a href="index.html" class="nav-btn">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <a href="index.html#trending" class="nav-btn">
+                    <i class="fas fa-film"></i> Movies
+                </a>
+                <a href="index.html#reviews" class="nav-btn">
+                    <i class="fas fa-star"></i> Reviews
+                </a>
+                <a href="quiz.html" class="nav-btn active">
+                    <i class="fas fa-question-circle"></i> Movie Quiz
+                </a>
+                <a href="index.html#community" class="nav-btn">
+                    <i class="fas fa-users"></i> Community
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Quiz Hero Section -->
+    <section class="quiz-hero">
+        <h1>Movie Quiz Challenge</h1>
+        <p>Test your movie knowledge with our fun quiz! Can you beat the high score?</p>
+        <div class="hero-stats">
+            <div class="stat">
+                <i class="fas fa-question"></i>
+                <span>10 Questions</span>
+            </div>
+            <div class="stat">
+                <i class="fas fa-trophy"></i>
+                <span>Beat 85% of players</span>
+            </div>
+            <div class="stat">
+                <i class="fas fa-clock"></i>
+                <span>5-10 minutes</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Quiz Container -->
+    <main class="quiz-main">
+        <div class="quiz-container">
+            <!-- Quiz Card -->
+            <div class="quiz-card">
+                <!-- Quiz Header with Progress -->
+                <div class="quiz-header">
+                    <div class="quiz-progress">
+                        <span class="progress-text">Question <span id="currentQuestion">1</span>/10</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill" style="width: 10%"></div>
+                        </div>
+                    </div>
+                    <div class="quiz-score">
+                        <i class="fas fa-star"></i> Score: <span id="currentScore">0</span>
+                    </div>
+                </div>
+
+                <!-- Question Area -->
+                <div class="question-area">
+                    <div class="quiz-question" id="question">
+                        Loading question...
+                    </div>
+                    
+                    <!-- Options Container -->
+                    <div class="quiz-options" id="options">
+                        <!-- Options will be loaded here by JavaScript -->
+                    </div>
+
+                    <!-- Feedback Area -->
+                    <div class="quiz-feedback" id="feedback">
+                        <div class="feedback-content" id="feedbackContent">
+                            <!-- Feedback will appear here -->
+                        </div>
+                        <div class="fun-fact" id="funFact">
+                            <!-- Fun facts will appear here -->
+                        </div>
+                    </div>
+
+                    <!-- Quiz Controls -->
+                    <div class="quiz-controls">
+                        <button class="quiz-btn secondary" id="hintBtn">
+                            <i class="fas fa-lightbulb"></i> Get Hint
+                        </button>
+                        
+                        <div class="control-group">
+                            <button class="quiz-btn" id="nextBtn" disabled>
+                                Next Question <i class="fas fa-arrow-right"></i>
+                            </button>
+                            <button class="quiz-btn secondary" id="skipBtn">
+                                <i class="fas fa-forward"></i> Skip
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quiz Stats Sidebar -->
+            <div class="quiz-sidebar">
+                <div class="sidebar-card">
+                    <h3><i class="fas fa-chart-line"></i> Your Stats</h3>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-value" id="correctCount">0</div>
+                            <div class="stat-label">Correct</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="incorrectCount">0</div>
+                            <div class="stat-label">Incorrect</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="skippedCount">0</div>
+                            <div class="stat-label">Skipped</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar-card">
+                    <h3><i class="fas fa-trophy"></i> Leaderboard</h3>
+                    <div class="leaderboard">
+                        <div class="leader-item">
+                            <span class="rank">1</span>
+                            <span class="name">MovieMaster42</span>
+                            <span class="score">950</span>
+                        </div>
+                        <div class="leader-item">
+                            <span class="rank">2</span>
+                            <span class="name">CinemaExpert</span>
+                            <span class="score">920</span>
+                        </div>
+                        <div class="leader-item">
+                            <span class="rank">3</span>
+                            <span class="name">FilmBuff99</span>
+                            <span class="score">890</span>
+                        </div>
+                        <div class="leader-item current-user">
+                            <span class="rank">-</span>
+                            <span class="name">You</span>
+                            <span class="score" id="yourScore">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar-card">
+                    <h3><i class="fas fa-info-circle"></i> Quiz Rules</h3>
+                    <ul class="rules-list">
+                        <li><i class="fas fa-check-circle"></i> 10 multiple choice questions</li>
+                        <li><i class="fas fa-check-circle"></i> +10 points for correct answer</li>
+                        <li><i class="fas fa-check-circle"></i> +5 points for using hint</li>
+                        <li><i class="fas fa-check-circle"></i> No penalty for wrong answers</li>
+                        <li><i class="fas fa-check-circle"></i> Complete all questions to see results</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Modal (Hidden by default) -->
+        <div class="results-modal" id="resultsModal">
+            <div class="modal-content">
+                <div class="result-header">
+                    <div class="result-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h2>Quiz Completed!</h2>
+                    <p>Your final score</p>
+                    <div class="final-score" id="finalScore">0</div>
+                </div>
+
+                <div class="result-stats">
+                    <div class="stat-row">
+                        <div class="stat-item">
+                            <div class="stat-value" id="finalCorrect">0</div>
+                            <div class="stat-label">Correct Answers</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="finalIncorrect">0</div>
+                            <div class="stat-label">Incorrect</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="finalSkipped">0</div>
+                            <div class="stat-label">Skipped</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="result-message" id="resultMessage">
+                    <!-- Message will be inserted here -->
+                </div>
+
+                <div class="result-actions">
+                    <button class="quiz-btn" id="retryBtn">
+                        <i class="fas fa-redo"></i> Try Again
+                    </button>
+                    <button class="quiz-btn secondary" id="shareBtn">
+                        <i class="fas fa-share-alt"></i> Share Score
+                    </button>
+                    <a href="index.html" class="quiz-btn secondary">
+                        <i class="fas fa-home"></i> Back to Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2503/2503508.png" alt="PopCornPrise">
+                    <h3>PopCornPrise</h3>
+                </div>
+                <p>Test your movie knowledge with our fun quizzes!</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>More Quizzes</h4>
+                <ul>
+                    <li><a href="#">Oscar Winners Quiz</a></li>
+                    <li><a href="#">Movie Quotes Challenge</a></li>
+                    <li><a href="#">Director's Filmography</a></li>
+                    <li><a href="#">90s Movies Trivia</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 PopCornPrise. Movie Quiz Challenge.</p>
+        </div>
+    </footer>
+
+    <!-- QUIZ STYLES (Put at the bottom of the page) -->
+    <style>
+        /* ========================================
+           QUIZ PAGE STYLES - BOTTOM OF PAGE
+           ======================================== */
+        
+        /* Quiz Hero Section */
+        .quiz-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+                        url('https://images.unsplash.com/photo-1489599809516-9827b6d1cf13?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 80px 40px;
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        .quiz-hero h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .quiz-hero p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto 25px;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .hero-stats .stat {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px 20px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-stats .stat i {
+            color: var(--primary-color);
+            font-size: 18px;
+        }
+
+        /* Quiz Main Container */
+        .quiz-main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px 60px;
+        }
+
+        .quiz-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        @media (max-width: 1024px) {
+            .quiz-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Quiz Card */
+        .quiz-card {
+            background: var(--card-dark);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        body.light-mode .quiz-card {
+            background: var(--card-light);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        /* Quiz Header */
+        .quiz-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        body.light-mode .quiz-header {
+            border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .quiz-progress {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .progress-text {
+            font-size: 16px;
+            color: #ccc;
+            white-space: nowrap;
+        }
+
+        body.light-mode .progress-text {
+            color: #666;
+        }
+
+        .progress-bar {
+            width: 200px;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        body.light-mode .progress-bar {
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-color), #ff9900);
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+
+        .quiz-score {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Question Area */
+        .question-area {
+            margin-top: 20px;
+        }
+
+        .quiz-question {
+            font-size: 24px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            color: white;
+            font-weight: 600;
+        }
+
+        body.light-mode .quiz-question {
+            color: #333;
+        }
+
+        /* Quiz Options */
+        .quiz-options {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .quiz-option {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 18px 20px;
+            font-size: 17px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        body.light-mode .quiz-option {
+            background: rgba(0, 0, 0, 0.05);
+            border: 2px solid rgba(0, 0, 0, 0.1);
+            color: #333;
+        }
+
+        .quiz-option:hover {
+            background: rgba(245, 197, 24, 0.1);
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .quiz-option.selected {
+            background: rgba(245, 197, 24, 0.2);
+            border-color: var(--primary-color);
+        }
+
+        .quiz-option.correct {
+            background: rgba(46, 213, 115, 0.2);
+            border-color: #2ed573;
+        }
+
+        .quiz-option.wrong {
+            background: rgba(255, 71, 87, 0.2);
+            border-color: #ff4757;
+        }
+
+        .option-number {
+            background: rgba(255, 255, 255, 0.1);
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 15px;
+            flex-shrink: 0;
+        }
+
+        body.light-mode .option-number {
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .quiz-option.correct .option-number {
+            background: #2ed573;
+            color: white;
+        }
+
+        .quiz-option.wrong .option-number {
+            background: #ff4757;
+            color: white;
+        }
+
+        /* Feedback Area */
+        .quiz-feedback {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            display: none;
+        }
+
+        body.light-mode .quiz-feedback {
+            background: rgba(0, 0, 0, 0.05);
+        }
+
+        .quiz-feedback.show {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .feedback-content {
+            font-size: 16px;
+            color: #ccc;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        body.light-mode .feedback-content {
+            color: #666;
+        }
+
+        .fun-fact {
+            padding: 12px;
+            background: rgba(245, 197, 24, 0.1);
+            border-left: 3px solid var(--primary-color);
+            border-radius: 6px;
+            font-size: 14px;
+            color: var(--primary-color);
+        }
+
+        /* Quiz Controls */
+        .quiz-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+            padding-top: 25px;
+            border-top: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        body.light-mode .quiz-controls {
+            border-top: 2px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .control-group {
+            display: flex;
+            gap: 15px;
+        }
+
+        .quiz-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 25px;
+            background: var(--primary-color);
+            color: var(--secondary-color);
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .quiz-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(245, 197, 24, 0.3);
+        }
+
+        .quiz-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .quiz-btn.secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        body.light-mode .quiz-btn.secondary {
+            background: rgba(0, 0, 0, 0.1);
+            color: #333;
+        }
+
+        /* Quiz Sidebar */
+        .quiz-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .sidebar-card {
+            background: var(--card-dark);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        body.light-mode .sidebar-card {
+            background: var(--card-light);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar-card h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+
+        body.light-mode .stat-item {
+            background: rgba(0, 0, 0, 0.05);
+        }
+
+        .stat-value {
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: #aaa;
+        }
+
+        body.light-mode .stat-label {
+            color: #666;
+        }
+
+        /* Leaderboard */
+        .leaderboard {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .leader-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+        }
+
+        body.light-mode .leader-item {
+            background: rgba(0, 0, 0, 0.05);
+        }
+
+        .leader-item.current-user {
+            background: rgba(245, 197, 24, 0.1);
+            border: 1px solid rgba(245, 197, 24, 0.3);
+        }
+
+        .rank {
+            width: 25px;
+            height: 25px;
+            background: var(--primary-color);
+            color: var(--secondary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .name {
+            flex: 1;
+            font-size: 14px;
+            color: white;
+        }
+
+        body.light-mode .name {
+            color: #333;
+        }
+
+        .score {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 14px;
+        }
+
+        /* Rules List */
+        .rules-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .rules-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 12px;
+            font-size: 14px;
+            color: #ccc;
+            line-height: 1.5;
+        }
+
+        body.light-mode .rules-list li {
+            color: #666;
+        }
+
+        .rules-list li i {
+            color: var(--primary-color);
+            margin-top: 2px;
+        }
+
+        /* Results Modal */
+        .results-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 3000;
+            padding: 20px;
+        }
+
+        .results-modal.show {
+            display: flex;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content {
+            background: var(--card-dark);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            border: 2px solid var(--primary-color);
+        }
+
+        body.light-mode .modal-content {
+            background: var(--card-light);
+        }
+
+        .result-header {
+            margin-bottom: 30px;
+        }
+
+        .result-icon {
+            font-size: 60px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .result-header h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        body.light-mode .result-header h2 {
+            color: #333;
+        }
+
+        .result-header p {
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+
+        body.light-mode .result-header p {
+            color: #666;
+        }
+
+        .final-score {
+            font-size: 72px;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin: 20px 0;
+        }
+
+        /* Result Stats */
+        .result-stats {
+            margin: 30px 0;
+        }
+
+        .stat-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        /* Result Message */
+        .result-message {
+            font-size: 18px;
+            color: #ccc;
+            margin: 30px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            line-height: 1.6;
+        }
+
+        body.light-mode .result-message {
+            color: #666;
+            background: rgba(0, 0, 0, 0.05);
+        }
+
+        /* Result Actions */
+        .result-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .quiz-hero {
+                padding: 60px 20px;
+            }
+
+            .quiz-hero h1 {
+                font-size: 32px;
+            }
+
+            .quiz-card {
+                padding: 25px;
+            }
+
+            .quiz-container {
+                padding: 0 15px;
+            }
+
+            .quiz-controls {
+                flex-direction: column;
+                gap: 15px;
+                align-items: stretch;
+            }
+
+            .control-group {
+                flex-direction: column;
+            }
+
+            .quiz-btn {
+                justify-content: center;
+            }
+
+            .stat-row {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .quiz-question {
+                font-size: 20px;
+            }
+
+            .quiz-option {
+                padding: 15px;
+                font-size: 16px;
+            }
+
+            .progress-bar {
+                width: 150px;
+            }
+
+            .modal-content {
+                padding: 25px;
+            }
+
+            .final-score {
+                font-size: 48px;
+            }
+        }
+    </style>
+
+    <!-- QUIZ JAVASCRIPT -->
+    <script>
+        // Quiz data
+        const quizData = [
+            {
+                question: "Who played Jack Dawson in Titanic?",
+                options: [
+                    "Leonardo DiCaprio",
+                    "Brad Pitt", 
+                    "Johnny Depp",
+                    "Tom Cruise"
+                ],
+                answer: 0,
+                hint: "He also starred in 'The Revenant' and won his first Oscar for it.",
+                fact: "Leonardo DiCaprio's real name is Leonardo Wilhelm DiCaprio."
+            },
+            {
+                question: "Which movie became the first non-English language film to win Best Picture Oscar?",
+                options: [
+                    "Roma",
+                    "Parasite",
+                    "Crouching Tiger, Hidden Dragon",
+                    "Life is Beautiful"
+                ],
+                answer: 1,
+                hint: "This South Korean film won in 2020.",
+                fact: "Parasite won 4 Oscars including Best Picture, Director, and Original Screenplay."
+            },
+            {
+                question: "In which movie does the character 'Forrest Gump' appear?",
+                options: [
+                    "Forrest Gump",
+                    "Cast Away",
+                    "The Green Mile",
+                    "Saving Private Ryan"
+                ],
+                answer: 0,
+                hint: "The movie shares its name with the main character.",
+                fact: "Tom Hanks won his second consecutive Best Actor Oscar for this role."
+            },
+            {
+                question: "Which superhero is known as 'The Dark Knight'?",
+                options: [
+                    "Superman",
+                    "Batman",
+                    "Iron Man",
+                    "Spider-Man"
+                ],
+                answer: 1,
+                hint: "He operates in Gotham City and has a butler named Alfred.",
+                fact: "Christian Bale played Batman in Christopher Nolan's Dark Knight trilogy."
+            },
+            {
+                question: "Who directed 'The Shawshank Redemption'?",
+                options: [
+                    "Steven Spielberg",
+                    "Martin Scorsese",
+                    "Frank Darabont",
+                    "James Cameron"
+                ],
+                answer: 2,
+                hint: "He also directed 'The Green Mile' and 'The Mist'.",
+                fact: "The film was adapted from a Stephen King novella called 'Rita Hayworth and Shawshank Redemption'."
+            },
+            {
+                question: "Which 1994 film features the quote 'Hasta la vista, baby'?",
+                options: [
+                    "Die Hard",
+                    "Terminator 2: Judgment Day",
+                    "Predator",
+                    "Total Recall"
+                ],
+                answer: 1,
+                hint: "Arnold Schwarzenegger says this line in the movie.",
+                fact: "Terminator 2 won 4 Oscars for its groundbreaking visual effects."
+            },
+            {
+                question: "What is the name of the hobbit played by Elijah Wood in Lord of the Rings?",
+                options: [
+                    "Frodo Baggins",
+                    "Bilbo Baggins",
+                    "Samwise Gamgee",
+                    "Peregrin Took"
+                ],
+                answer: 0,
+                hint: "He is the Ring-bearer who must destroy the One Ring.",
+                fact: "Elijah Wood was 18 when he was cast as Frodo Baggins."
+            },
+            {
+                question: "Which actress played Hermione Granger in the Harry Potter films?",
+                options: [
+                    "Emma Stone",
+                    "Emma Roberts",
+                    "Emma Watson",
+                    "Emily Blunt"
+                ],
+                answer: 2,
+                hint: "She shares her first name with two other famous actresses.",
+                fact: "Emma Watson was only 9 years old when she was cast as Hermione."
+            },
+            {
+                question: "In 'The Matrix', what color pill does Neo take?",
+                options: [
+                    "Blue pill",
+                    "Red pill",
+                    "Green pill",
+                    "Purple pill"
+                ],
+                answer: 1,
+                hint: "Morpheus offers him a choice between two colored pills.",
+                fact: "The 'red pill' has become a cultural metaphor for awakening to truth."
+            },
+            {
+                question: "Which film won the first ever Academy Award for Best Picture?",
+                options: [
+                    "Sunrise",
+                    "Wings",
+                    "The Jazz Singer",
+                    "Metropolis"
+                ],
+                answer: 1,
+                hint: "It's a 1927 silent film about World War I fighter pilots.",
+                fact: "Wings was the only silent film to win Best Picture until The Artist in 2011."
+            }
+        ];
+
+        // Quiz state
+        let currentQuestion = 0;
+        let score = 0;
+        let correctCount = 0;
+        let incorrectCount = 0;
+        let skippedCount = 0;
+        let selectedOption = null;
+        let questionsAnswered = 0;
+
+        // DOM elements
+        const questionEl = document.getElementById('question');
+        const optionsEl = document.getElementById('options');
+        const currentQuestionEl = document.getElementById('currentQuestion');
+        const progressFillEl = document.getElementById('progressFill');
+        const currentScoreEl = document.getElementById('currentScore');
+        const nextBtn = document.getElementById('nextBtn');
+        const hintBtn = document.getElementById('hintBtn');
+        const skipBtn = document.getElementById('skipBtn');
+        const feedbackEl = document.getElementById('feedback');
+        const feedbackContentEl = document.getElementById('feedbackContent');
+        const funFactEl = document.getElementById('funFact');
+        const resultsModal = document.getElementById('resultsModal');
+        const finalScoreEl = document.getElementById('finalScore');
+        const finalCorrectEl = document.getElementById('finalCorrect');
+        const finalIncorrectEl = document.getElementById('finalIncorrect');
+        const finalSkippedEl = document.getElementById('finalSkipped');
+        const resultMessageEl = document.getElementById('resultMessage');
+        const correctCountEl = document.getElementById('correctCount');
+        const incorrectCountEl = document.getElementById('incorrectCount');
+        const skippedCountEl = document.getElementById('skippedCount');
+        const yourScoreEl = document.getElementById('yourScore');
+        const retryBtn = document.getElementById('retryBtn');
+        const shareBtn = document.getElementById('shareBtn');
+
+        // Initialize quiz
+        function initQuiz() {
+            loadQuestion();
+            updateStats();
+            
+            // Event listeners
+            nextBtn.addEventListener('click', nextQuestion);
+            hintBtn.addEventListener('click', showHint);
+            skipBtn.addEventListener('click', skipQuestion);
+            retryBtn.addEventListener('click', restartQuiz);
+            shareBtn.addEventListener('click', shareResults);
+        }
+
+        // Load current question
+        function loadQuestion() {
+            const question = quizData[currentQuestion];
+            
+            // Update question text
+            questionEl.textContent = question.question;
+            currentQuestionEl.textContent = currentQuestion + 1;
+            
+            // Update progress bar
+            const progress = ((currentQuestion) / quizData.length) * 100;
+            progressFillEl.style.width = `${progress}%`;
+            
+            // Clear previous options
+            optionsEl.innerHTML = '';
+            
+            // Create new options
+            question.options.forEach((option, index) => {
+                const optionEl = document.createElement('button');
+                optionEl.className = 'quiz-option';
+                optionEl.innerHTML = `
+                    <span class="option-number">${String.fromCharCode(65 + index)}</span>
+                    <span class="option-text">${option}</span>
+                `;
+                optionEl.addEventListener('click', () => selectOption(index));
+                optionsEl.appendChild(optionEl);
+            });
+            
+            // Reset UI
+            selectedOption = null;
+            feedbackEl.classList.remove('show');
+            nextBtn.disabled = true;
+            hintBtn.disabled = false;
+        }
+
+        // Select an option
+        function selectOption(index) {
+            // Remove previous selection
+            document.querySelectorAll('.quiz-option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            
+            // Mark selected option
+            const optionEl = document.querySelectorAll('.quiz-option')[index];
+            optionEl.classList.add('selected');
+            selectedOption = index;
+            
+            // Check answer
+            const isCorrect = index === quizData[currentQuestion].answer;
+            
+            // Show feedback
+            showFeedback(isCorrect);
+            
+            // Update score
+            if (isCorrect) {
+                score += 10;
+                correctCount++;
+            } else {
+                incorrectCount++;
+            }
+            
+            questionsAnswered++;
+            
+            // Update UI
+            currentScoreEl.textContent = score;
+            yourScoreEl.textContent = score;
+            updateStats();
+            nextBtn.disabled = false;
+            hintBtn.disabled = true;
+        }
+
+        // Show feedback
+        function showFeedback(isCorrect) {
+            const question = quizData[currentQuestion];
+            const correctAnswer = question.options[question.answer];
+            
+            feedbackContentEl.innerHTML = isCorrect 
+                ? `<strong>Correct!</strong> ${correctAnswer} is the right answer.`
+                : `<strong>Incorrect.</strong> The correct answer is: ${correctAnswer}`;
+            
+            funFactEl.textContent = `Did you know? ${question.fact}`;
+            feedbackEl.classList.add('show');
+            
+            // Highlight correct/wrong answers
+            document.querySelectorAll('.quiz-option').forEach((opt, index) => {
+                if (index === question.answer) {
+                    opt.classList.add('correct');
+                } else if (index === selectedOption && index !== question.answer) {
+                    opt.classList.add('wrong');
+                }
+            });
+        }
+
+        // Show hint
+        function showHint() {
+            const question = quizData[currentQuestion];
+            alert(`Hint: ${question.hint}`);
+            score += 5; // Bonus points for using hint
+            currentScoreEl.textContent = score;
+            yourScoreEl.textContent = score;
+            hintBtn.disabled = true;
+        }
+
+        // Skip question
+        function skipQuestion() {
+            skippedCount++;
+            questionsAnswered++;
+            updateStats();
+            
+            if (currentQuestion < quizData.length - 1) {
+                currentQuestion++;
+                loadQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        // Next question
+        function nextQuestion() {
+            if (currentQuestion < quizData.length - 1) {
+                currentQuestion++;
+                loadQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        // Update stats
+        function updateStats() {
+            correctCountEl.textContent = correctCount;
+            incorrectCountEl.textContent = incorrectCount;
+            skippedCountEl.textContent = skippedCount;
+        }
+
+        // Show results
+        function showResults() {
+            const percentage = (correctCount / quizData.length) * 100;
+            
+            // Update final scores
+            finalScoreEl.textContent = score;
+            finalCorrectEl.textContent = correctCount;
+            finalIncorrectEl.textContent = incorrectCount;
+            finalSkippedEl.textContent = skippedCount;
+            
+            // Set result message
+            let message = '';
+            if (percentage >= 90) {
+                message = "🎯 Movie Master! You're a true cinephile! You know your movies inside out.";
+            } else if (percentage >= 70) {
+                message = "🌟 Great job! You have excellent movie knowledge. Keep watching!";
+            } else if (percentage >= 50) {
+                message = "👍 Good effort! You know the basics. Time for a movie marathon!";
+            } else {
+                message = "🎬 Room for improvement! Don't worry, everyone starts somewhere. Watch more movies!";
+            }
+            
+            resultMessageEl.textContent = message;
+            
+            // Show modal
+            resultsModal.classList.add('show');
+        }
+
+        // Restart quiz
+        function restartQuiz() {
+            // Reset state
+            currentQuestion = 0;
+            score = 0;
+            correctCount = 0;
+            incorrectCount = 0;
+            skippedCount = 0;
+            selectedOption = null;
+            questionsAnswered = 0;
+            
+            // Update UI
+            currentScoreEl.textContent = '0';
+            yourScoreEl.textContent = '0';
+            updateStats();
+            
+            // Hide modal
+            resultsModal.classList.remove('show');
+            
+            // Reload first question
+            loadQuestion();
+        }
+
+        // Share results
+        function shareResults() {
+            const shareText = `I scored ${score} points on the PopCornPrise Movie Quiz! Can you beat my score?`;
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: 'My Movie Quiz Score',
+                    text: shareText,
+                    url: window.location.href
+                });
+            } else {
+                // Fallback: Copy to clipboard
+                navigator.clipboard.writeText(shareText)
+                    .then(() => alert('Score copied to clipboard! Share it with your friends.'));
+            }
+        }
+
+        // Initialize quiz when page loads
+        document.addEventListener('DOMContentLoaded', initQuiz);
+    </script>
+</body>
+</html>
