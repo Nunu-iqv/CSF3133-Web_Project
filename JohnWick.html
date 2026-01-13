@@ -1,80 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="description" content="The Shawshank Redemption - PopCorn">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>John Wick - PopCorn</title>
-<link rel="stylesheet" href="style.css">
-<script src="java.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="description" content="The Notebook - PopCorn">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Notebook - PopCorn</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
-<header>
-    <div class="top-bar">
-        <!-- LEFT: Theme Toggle Button -->
-        <div class="left-section">
-            <button class="theme-toggle" onclick="changeTheme()">🌙 Dark Mode</button>
-        </div>
-        
-        <!-- CENTER: Logo with Image -->
-        <div class="center-section">
-            <div class="logo-container">
-                <img src="Images and video/popcorn_logo.jpeg" alt="PopCorn Logo" class="site-logo">
-                <a href="index.html" class="logo">PopCorn</a>
+ <!-- Header -->
+    <header>
+        <div class="top-bar">
+            <div class="logo-section">
+                <a href="index.html" class="logo">
+                    <img src="Images and video/popcorn_logo.jpeg" alt="PopCornPrise">
+                    <span>PopCornPrise</span>
+                </a>
+                
+                <button class="theme-btn" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+
+            <div class="user-section">
+                <button class="mobile-menu-btn" id="mobileBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <a href="#" class="pro-btn">PopCorn Pro</a>
             </div>
         </div>
-        
-        <!-- RIGHT: Language and Pro -->
-        <div class="right-section">
-            <a href="#" class="imdb-pro">PopCorn Pro</a>
-            <span class="language-selector">EN</span>
-        </div>
-    </div>
-    
-    <!-- Main Navigation (Same as other pages) -->
-    <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
-    <nav class="main-nav">
-        <div class="dropdown">
-            <button class="dropdown-btn" onclick="toggleDropdown(this)">
-                Movies ▼
-            </button>
-            <div class="dropdown-content">
-                <a href="WhatToWatch.html">What to watch</a>
-                <a href="TopRated.html">Top Rated</a>
+
+        <!-- Navigation -->
+        <nav class="main-nav" id="mainNav">
+            <div class="nav-container">
+                <div class="dropdown">
+                    <button class="nav-btn">
+                        <i class="fas fa-film"></i> Movies
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="#trending">Trending Now</a>
+                        <a href="#upcoming">Upcoming</a>
+                        <a href="#now-playing">Now Playing</a>
+                        <a href="#top-rated">Top Rated</a>
+                    </div>
+                </div>
+                
+                <div class="dropdown">
+                    <button class="nav-btn">
+                        <i class="fas fa-award"></i> Awards
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="Oscar.html">
+                            <i class="fas fa-trophy"></i> Oscars 2024
+                        </a>
+                        <a href="emmys.html">
+                            <i class="fas fa-tv"></i> Emmys 2024
+                        </a>
+                    </div>
+                </div>
+                
+                <a href="#community" class="nav-btn">
+                    <i class="fas fa-users"></i> Community
+                </a>
+                <a href="#about" class="nav-btn">
+                    <i class="fas fa-info-circle"></i> About Us
+                </a>
+                <a href="#reviews" class="nav-btn">
+                    <i class="fas fa-star"></i> Reviews
+                </a>
+                <a href="#submit" class="nav-btn">
+                    <i class="fas fa-edit"></i> Submit Review
+                </a>
             </div>
-        </div>
-        
-        <div class="dropdown">
-            <button class="dropdown-btn" onclick="toggleDropdown(this)">
-                Awards & Events ▼
-            </button>
-            <div class="dropdown-content">
-                <a href="Oscar.html">Oscars</a>
-                <a href="Emmy.html">Emmys</a>
-            </div>
-        </div>
-        
-        <a href="index.html#reviews" class="dropdown-btn">Reviews</a>
-        <a href="index.html#ranking" class="dropdown-btn">Ranking</a>
-        <a href="index.html#submit" class="dropdown-btn">Submit Review</a>
-        <a href="index.html#community" class="dropdown-btn">Community</a> 
-        <a href="index.html#about" class="dropdown-btn">About</a>
-    </nav>
-</header>
+        </nav>
+    </header>
 
 <!-- Simplified Movie Main Content -->
 <main class="movie-main">
     <!-- Movie Header -->
     <div class="movie-header-simple">
         <div class="movie-poster-simple">
-            <img src="johnposter.jpg" alt="John Wick">
+            <img src="Images and video/johnposter.jpg" alt="John Wick">
         </div>
         <div class="movie-info-simple">
             <h1>John Wick (2014)</h1>
             <div class="movie-rating-simple">
-                <span class="rating-star">⭐ 9.8/10</span>
-                <span class="rating-votes">3.5M votes</span>
+                <span class="rating-star">⭐ 7.4/10</span>
+                <span class="rating-votes">735K votes</span>
             </div>
             <div class="movie-meta-simple">
                 <span>1h 41min</span> • 
@@ -82,7 +97,7 @@
                 <span>Rated R</span>
             </div>
             <div class="movie-tagline-simple">
-                "Revange is all his has left."
+                "Don't set him off."
             </div>
             <div class="movie-actions-simple">
                 <a href="index.html#submit" class="btn-rate">★ Rate This Movie</a>
@@ -95,9 +110,9 @@
         <!-- Synopsis -->
         <section class="detail-section">
             <h2>Story</h2>
-            <p>John Wick (2014) is an action movie about a retired hitman who returns to his deadly past after his dog is killed 
-                and his car is stolen. Driven by revenge, he goes on a violent mission against powerful criminals, showing his 
-                legendary fighting skills and fearsome reputation.</p>
+            <p>An ex-hitman comes out of retirement to track down the gangsters who took everything from him. With a puppy given to him by his late wife, John Wick leads a peaceful life until a group of thugs breaks into his home, steals his car, and kills his puppy, triggering his brutal return to the criminal underworld.</p>
+            <p>John embarks on a relentless quest for vengeance, facing off against the Russian mob and uncovering a secret society of assassins with its own rules and currency.</p>
+        </section>
 
         <!-- Cast -->
         <section class="detail-section">
@@ -108,18 +123,21 @@
                     <p>as John Wick</p>
                 </div>
                 <div class="cast-member">
-                    <strong>Ian McShane
-                    <p>as Winston Scott</p>
+                    <strong>Michael Nyqvist</strong>
+                    <p>as Viggo Tarasov</p>
                 </div>
                 <div class="cast-member">
-                    <strong>Lance Reddick</strong>
-                    <p>as Charon</p>
+                    <strong>Alfie Allen</strong>
+                    <p>as Iosef Tarasov</p>
                 </div>
                 <div class="cast-member">
-                    <strong>Bridget Moynahan</strong>
-                    <p>as Mrs Wick</p>
+                    <strong>Willem Dafoe</strong>
+                    <p>as Marcus</p>
                 </div>
-                
+                <div class="cast-member">
+                    <strong>Chad Stahelski</strong>
+                    <p>Director</p>
+                </div>
             </div>
         </section>
 
@@ -127,10 +145,11 @@
         <section class="detail-section highlight">
             <h2>Interesting Facts</h2>
             <ul>
-                <li>The movie was made with a relatively low budget but became a cult classic</li>
-                <li>Won the Saturn Award for Best Action/Adventure Film</li>
-                <li>Highly praised by critics and fans for its stylish and well-choreographed action</li>
-                <li>Nominated for Best Actor (Keanu Reeves) and Best Editing</li>
+                <li>Keanu Reeves performed 90% of his own stunts</li>
+                <li>The film created a new style of action choreography called "Gun Fu"</li>
+                <li>Originally titled "Scorn" before being renamed</li>
+                <li>John Wick kills 77 people in the first film</li>
+                <li>Inspired by classic revenge films and samurai cinema</li>
             </ul>
         </section>
 
@@ -140,7 +159,7 @@
             <table class="details-table">
                 <tr>
                     <td><strong>Director:</strong></td>
-                    <td>Chad Stahelski</td>
+                    <td>Chad Stahelski, David Leitch</td>
                 </tr>
                 <tr>
                     <td><strong>Writer:</strong></td>
@@ -148,23 +167,23 @@
                 </tr>
                 <tr>
                     <td><strong>Release Date:</strong></td>
-                    <td>October 24, 2014</td>
+                    <td>October 24, 2014 (USA)</td>
                 </tr>
                 <tr>
                     <td><strong>Budget:</strong></td>
-                    <td>approximately $20–30 million</td>
+                    <td>$20-30 million</td>
                 </tr>
                 <tr>
                     <td><strong>Box Office:</strong></td>
-                    <td>$86–88 million globally</td>
+                    <td>$86 million</td>
                 </tr>
                 <tr>
                     <td><strong>Awards:</strong></td>
-                    <td>Nominated in 2 award.</td>
+                    <td>1 Saturn Award, multiple nominations</td>
                 </tr>
                 <tr>
                     <td><strong>Filming Locations:</strong></td>
-                    <td>Queens, Brooklyn, Long Island, Upper Nyack</td>
+                    <td>New York City, New Jersey, Canada</td>
                 </tr>
             </table>
         </section>
@@ -173,17 +192,17 @@
         <section class="detail-section">
             <h2>Similar Movies</h2>
             <div class="similar-movies-simple">
-                <a href="godfather.html" class="similar-movie">
-                    <span>The Godfather</span>
-                    <small>⭐ 9.2/10</small>
+                <a href="madmax.html" class="similar-movie">
+                    <span>Mad Max: Fury Road</span>
+                    <small>⭐ 8.1/10</small>
                 </a>
                 <a href="#" class="similar-movie">
-                    <span>The Green Mile</span>
-                    <small>⭐ 8.6/10</small>
+                    <span>The Equalizer</span>
+                    <small>⭐ 7.2/10</small>
                 </a>
                 <a href="#" class="similar-movie">
-                    <span>Forrest Gump</span>
-                    <small>⭐ 8.8/10</small>
+                    <span>Nobody</span>
+                    <small>⭐ 7.4/10</small>
                 </a>
                 <a href="TopRated.html" class="similar-movie view-all">
                     <span>View All Top Movies →</span>
@@ -193,18 +212,267 @@
     </div>
 </main>
 
-<footer>
-    <p>Contact us: <a href="mailto:contact@moviesphere.com">contact@moviesphere.com</a></p>
-    <p>Follow us: 
-        <a href="#">Twitter</a> | 
-        <a href="#">Facebook</a> | 
-        <a href="#">Instagram</a>
-    </p>
-    <p>© 2026 MovieSphere. All movie data is for educational purposes.</p>
-    <p>This site is inspired by IMDb but created for educational use.</p>
+<footer class="main-footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <div class="footer-logo">
+                <h3>PopCornPrise</h3>
+            </div>
+            <p>Your trusted movie review platform.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        
+        <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html#trending">Trending Movies</a></li>
+                <li><a href="index.html#upcoming">Upcoming Movies</a></li>
+                <li><a href="index.html#community">Community</a></li>
+                <li><a href="index.html#about">About Us</a></li>
+                <li><a href="index.html#submit">Submit Review</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-section">
+            <h4>Awards</h4>
+            <ul>
+                <li><a href="Oscar.html">Oscars</a></li>
+                <li><a href="Emmy.html">Emmys</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>Contact us: <a href="mailto:contact@popcornprise.com">contact@popcornprise.com</a></p>
+        <p>© 2026 PopCornPrise. Built for Movie Lovers.</p>
+        <p>This site is inspired by IMDb but created for educational use.</p>
+    </div>
 </footer>
 
 <style>
+/* CSS STYLES START HERE */
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #121212;
+    color: #ffffff;
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.light {
+    background-color: #ffffff;
+    color: #333333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header Styles */
+.top-bar {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+body.light .top-bar {
+    background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #f5c518;
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+}
+
+.theme-btn {
+    background: #333;
+    color: #f5c518;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.3s;
+}
+
+.theme-btn:hover {
+    background: #444;
+    transform: scale(1.1);
+}
+
+.language-selector {
+    background: #333;
+    color: white;
+    border: 1px solid #555;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+body.light .language-selector {
+    background: #f5f5f5;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.user-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+body.light .mobile-menu-btn {
+    color: #333;
+}
+
+.pro-btn {
+    background: linear-gradient(135deg, #f5c518 0%, #e0b000 100%);
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.pro-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(245, 197, 24, 0.3);
+}
+
+/* Navigation Styles */
+.main-nav {
+    background: #1a1a1a;
+    border-top: 1px solid #333;
+}
+
+body.light .main-nav {
+    background: #f8f8f8;
+    border-top: 1px solid #ddd;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    gap: 10px;
+    padding: 15px 0;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s;
+}
+
+body.light .nav-btn {
+    color: #333;
+}
+
+.nav-btn:hover {
+    background: #333;
+}
+
+body.light .nav-btn:hover {
+    background: #eaeaea;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #2d2d2d;
+    min-width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    display: none;
+    z-index: 100;
+    padding: 10px 0;
+}
+
+body.light .dropdown-menu {
+    background: white;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 12px 20px;
+    color: white;
+    transition: all 0.3s;
+}
+
+body.light .dropdown-menu a {
+    color: #333;
+}
+
+.dropdown-menu a:hover {
+    background: #3d3d3d;
+}
+
+body.light .dropdown-menu a:hover {
+    background: #f5f5f5;
+}
+
 /* Movie Main Styles */
 .movie-main {
     max-width: 1200px;
@@ -243,6 +511,10 @@
     font-weight: bold;
 }
 
+body.light .movie-info-simple h1 {
+    color: #333;
+}
+
 .movie-rating-simple {
     display: flex;
     align-items: center;
@@ -264,10 +536,18 @@
     font-size: 14px;
 }
 
+body.light .rating-votes {
+    color: #666;
+}
+
 .movie-meta-simple {
     color: #ccc;
     margin-bottom: 20px;
     font-size: 15px;
+}
+
+body.light .movie-meta-simple {
+    color: #666;
 }
 
 .movie-tagline-simple {
@@ -285,8 +565,10 @@
     flex-wrap: wrap;
 }
 
-.btn-trailer, .btn-rate {
+.btn-rate {
     display: inline-block;
+    background: #00a8ff;
+    color: white;
     padding: 12px 25px;
     border-radius: 6px;
     text-decoration: none;
@@ -294,19 +576,10 @@
     transition: all 0.3s;
 }
 
-.btn-trailer {
-    background: #f5c518;
-    color: #000;
-}
-
-.btn-rate {
-    background: #00a8ff;
-    color: white;
-}
-
-.btn-trailer:hover, .btn-rate:hover {
+.btn-rate:hover {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    background: #0097e6;
 }
 
 /* Movie Details Simple */
@@ -322,6 +595,11 @@
     padding: 25px;
 }
 
+body.light .detail-section {
+    background: #fff;
+    border: 1px solid #ddd;
+}
+
 .detail-section h2 {
     color: #f5c518;
     margin-bottom: 20px;
@@ -330,11 +608,19 @@
     padding-bottom: 10px;
 }
 
+body.light .detail-section h2 {
+    border-bottom: 2px solid #eee;
+}
+
 .detail-section p {
     color: #ccc;
     line-height: 1.7;
     margin-bottom: 15px;
     font-size: 15px;
+}
+
+body.light .detail-section p {
+    color: #666;
 }
 
 /* Cast Simple */
@@ -351,11 +637,19 @@
     border-left: 3px solid #f5c518;
 }
 
+body.light .cast-member {
+    background: #f5f5f5;
+}
+
 .cast-member strong {
     color: white;
     font-size: 16px;
     display: block;
     margin-bottom: 5px;
+}
+
+body.light .cast-member strong {
+    color: #333;
 }
 
 .cast-member p {
@@ -364,10 +658,19 @@
     font-size: 14px;
 }
 
+body.light .cast-member p {
+    color: #666;
+}
+
 /* Highlight Section */
 .highlight {
     background: #222;
     border-left: 4px solid #f5c518;
+}
+
+body.light .highlight {
+    background: #f9f9f9;
+    border-left-color: #f5c518;
 }
 
 .highlight ul {
@@ -382,6 +685,10 @@
     font-size: 15px;
 }
 
+body.light .highlight li {
+    color: #666;
+}
+
 /* Details Table */
 .details-table {
     width: 100%;
@@ -392,10 +699,18 @@
     border-bottom: 1px solid #333;
 }
 
+body.light .details-table tr {
+    border-bottom: 1px solid #eee;
+}
+
 .details-table td {
     padding: 12px 0;
     color: #ccc;
     font-size: 15px;
+}
+
+body.light .details-table td {
+    color: #666;
 }
 
 .details-table td:first-child {
@@ -423,9 +738,18 @@
     transition: all 0.3s;
 }
 
+body.light .similar-movie {
+    background: #f5f5f5;
+    color: #333;
+}
+
 .similar-movie:hover {
     background: #333;
     transform: translateX(5px);
+}
+
+body.light .similar-movie:hover {
+    background: #eee;
 }
 
 .similar-movie span {
@@ -446,41 +770,132 @@
     font-weight: bold;
 }
 
-/* Light Theme */
-body.light .detail-section {
-    background: #fff;
-    border: 1px solid #ddd;
+body.light .view-all {
+    background: #eee;
 }
 
-body.light .movie-info-simple h1 {
-    color: #333;
+/* Footer Styles */
+.main-footer {
+    background: #1a1a1a;
+    margin-top: 60px;
+    padding: 40px 20px 20px;
 }
 
-body.light .detail-section p,
-body.light .details-table td {
+body.light .main-footer {
+    background: #f8f8f8;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-logo h3 {
+    color: #f5c518;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.footer-section p {
+    color: #999;
+    margin-bottom: 20px;
+}
+
+body.light .footer-section p {
     color: #666;
 }
 
-body.light .cast-member {
-    background: #f5f5f5;
+.footer-section h4 {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 18px;
 }
 
-body.light .cast-member strong {
+body.light .footer-section h4 {
     color: #333;
 }
 
-body.light .highlight {
-    background: #f9f9f9;
-    border-left-color: #f5c518;
+.footer-section ul {
+    list-style: none;
 }
 
-body.light .similar-movie {
-    background: #f5f5f5;
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #999;
+    transition: color 0.3s;
+}
+
+body.light .footer-section ul li a {
+    color: #666;
+}
+
+.footer-section ul li a:hover {
+    color: #f5c518;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: #333;
+    border-radius: 50%;
+    color: white;
+    font-size: 18px;
+    transition: all 0.3s;
+}
+
+body.light .social-links a {
+    background: #ddd;
     color: #333;
 }
 
-body.light .similar-movie:hover {
-    background: #eee;
+.social-links a:hover {
+    background: #f5c518;
+    color: #000;
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 40px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    text-align: center;
+    color: #999;
+    font-size: 14px;
+}
+
+body.light .footer-bottom {
+    border-top: 1px solid #ddd;
+    color: #666;
+}
+
+.footer-bottom a {
+    color: #f5c518;
+}
+
+.footer-bottom p {
+    margin-bottom: 10px;
 }
 
 /* Responsive */
@@ -498,6 +913,55 @@ body.light .similar-movie:hover {
     .movie-info-simple h1 {
         font-size: 28px;
     }
+    
+    .nav-container {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 768px) {
+    .top-bar {
+        padding: 15px 20px;
+    }
+    
+    .mobile-menu-btn {
+        display: block;
+    }
+    
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #1a1a1a;
+        z-index: 1000;
+    }
+    
+    body.light .main-nav {
+        background: white;
+    }
+    
+    .main-nav.active {
+        display: block;
+    }
+    
+    .nav-container {
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        background: transparent;
+        display: none;
+        padding-left: 20px;
+    }
+    
+    .dropdown.active .dropdown-menu {
+        display: block;
+    }
 }
 
 @media (max-width: 600px) {
@@ -510,7 +974,7 @@ body.light .similar-movie:hover {
         flex-direction: column;
     }
     
-    .btn-trailer, .btn-rate {
+    .btn-rate {
         width: 100%;
         text-align: center;
     }
@@ -522,7 +986,206 @@ body.light .similar-movie:hover {
     .movie-main {
         padding: 20px 15px;
     }
+    
+    .logo span {
+        display: none;
+    }
+    
+    .language-selector {
+        padding: 8px;
+    }
 }
 </style>
+
+<script>
+// JAVASCRIPT START HERE
+
+// Theme Toggle
+const themeToggle = document.getElementById('themeToggle');
+const themeIcon = themeToggle.querySelector('i');
+
+// Check for saved theme
+if (localStorage.getItem('theme') === 'light') {
+    document.body.classList.add('light');
+    themeIcon.classList.remove('fa-moon');
+    themeIcon.classList.add('fa-sun');
+}
+
+themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('light');
+    
+    if (document.body.classList.contains('light')) {
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+        localStorage.setItem('theme', 'light');
+    } else {
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+        localStorage.setItem('theme', 'dark');
+    }
+});
+
+// Mobile Menu Toggle
+const mobileBtn = document.getElementById('mobileBtn');
+const mainNav = document.getElementById('mainNav');
+
+mobileBtn.addEventListener('click', () => {
+    mainNav.classList.toggle('active');
+    mobileBtn.querySelector('i').classList.toggle('fa-bars');
+    mobileBtn.querySelector('i').classList.toggle('fa-times');
+});
+
+// Dropdown functionality for mobile
+const dropdowns = document.querySelectorAll('.dropdown');
+
+dropdowns.forEach(dropdown => {
+    const button = dropdown.querySelector('.nav-btn');
+    
+    button.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768) {
+            e.preventDefault();
+            dropdown.classList.toggle('active');
+        }
+    });
+});
+
+// Close dropdowns when clicking outside
+document.addEventListener('click', (e) => {
+    if (!e.target.closest('.dropdown') && window.innerWidth <= 768) {
+        dropdowns.forEach(dropdown => {
+            dropdown.classList.remove('active');
+        });
+    }
+});
+
+// Language selector
+const languageSelector = document.querySelector('.language-selector');
+languageSelector.addEventListener('change', (e) => {
+    const selectedLanguage = e.target.value;
+    alert(`Language changed to: ${selectedLanguage === 'en' ? 'English' : 'Malay'}`);
+    // In a real application, you would change the language here
+});
+
+// Add active class to current page in navigation
+const currentPage = window.location.pathname.split('/').pop();
+const navLinks = document.querySelectorAll('.nav-btn, .dropdown-menu a');
+
+navLinks.forEach(link => {
+    if (link.getAttribute('href') === currentPage) {
+        link.classList.add('active');
+    }
+});
+
+// Initialize tooltips for interactive elements
+const initTooltips = () => {
+    const tooltipElements = document.querySelectorAll('.theme-btn, .pro-btn, .btn-rate');
+    
+    tooltipElements.forEach(element => {
+        element.addEventListener('mouseenter', (e) => {
+            const tooltip = document.createElement('div');
+            tooltip.className = 'tooltip';
+            tooltip.textContent = e.target.getAttribute('title') || 
+                                 (e.target.classList.contains('theme-btn') ? 'Toggle Theme' :
+                                  e.target.classList.contains('pro-btn') ? 'Upgrade to Pro' :
+                                  'Rate this movie');
+            
+            document.body.appendChild(tooltip);
+            
+            const rect = e.target.getBoundingClientRect();
+            tooltip.style.position = 'fixed';
+            tooltip.style.background = 'rgba(0,0,0,0.8)';
+            tooltip.style.color = 'white';
+            tooltip.style.padding = '5px 10px';
+            tooltip.style.borderRadius = '4px';
+            tooltip.style.fontSize = '12px';
+            tooltip.style.zIndex = '10000';
+            tooltip.style.top = (rect.top - 30) + 'px';
+            tooltip.style.left = (rect.left + rect.width/2 - tooltip.offsetWidth/2) + 'px';
+            
+            e.target._tooltip = tooltip;
+        });
+        
+        element.addEventListener('mouseleave', (e) => {
+            if (e.target._tooltip) {
+                e.target._tooltip.remove();
+                e.target._tooltip = null;
+            }
+        });
+    });
+};
+
+// Initialize when page loads
+document.addEventListener('DOMContentLoaded', () => {
+    initTooltips();
+    
+    // Add smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (targetId !== '#') {
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }
+        });
+    });
+    
+    // Add loading animation
+    const moviePoster = document.querySelector('.movie-poster-simple img');
+    if (moviePoster) {
+        moviePoster.addEventListener('load', function() {
+            this.style.opacity = '1';
+        });
+        moviePoster.style.transition = 'opacity 0.5s';
+        moviePoster.style.opacity = moviePoster.complete ? '1' : '0';
+    }
+});
+
+// Form validation for rate button
+const rateButton = document.querySelector('.btn-rate');
+if (rateButton) {
+    rateButton.addEventListener('click', (e) => {
+        if (rateButton.getAttribute('href') === 'index.html#submit') {
+            e.preventDefault();
+            alert('Redirecting to the review submission form on the main page.');
+            window.location.href = 'index.html#submit';
+        }
+    });
+}
+
+// Add animation to cast members on hover
+const castMembers = document.querySelectorAll('.cast-member');
+castMembers.forEach(member => {
+    member.addEventListener('mouseenter', () => {
+        member.style.transform = 'translateX(10px)';
+        member.style.transition = 'transform 0.3s ease';
+    });
+    
+    member.addEventListener('mouseleave', () => {
+        member.style.transform = 'translateX(0)';
+    });
+});
+
+// Similar movies hover effect
+const similarMovies = document.querySelectorAll('.similar-movie');
+similarMovies.forEach(movie => {
+    movie.addEventListener('mouseenter', () => {
+        if (!movie.classList.contains('view-all')) {
+            movie.querySelector('small').style.color = '#ffffff';
+        }
+    });
+    
+    movie.addEventListener('mouseleave', () => {
+        if (!movie.classList.contains('view-all')) {
+            movie.querySelector('small').style.color = '#f5c518';
+        }
+    });
+});
+</script>
 </body>
 </html>
