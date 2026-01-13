@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | PopCornPrise</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="script.js" defer></script>
+    <style>
+        /* Additional styles for About Us page */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                        url('https://images.unsplash.com/photo-1489599809516-9827b6d1cf13?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 120px 40px;
+            text-align: center;
+            color: white;
+            margin-bottom: 80px;
+        }
+        
+        .hero-section h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .hero-section p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        .story-section {
+            max-width: 1200px;
+            margin: 0 auto 80px;
+            padding: 0 40px;
+        }
+        
+        .story-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .story-image img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .story-text h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+        }
+        
+        .story-text p {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #ccc;
+        }
+        
+        body.light-mode .story-text p {
+            color: #666;
+        }
+        
+        .values-section {
+            background: rgba(30, 30, 30, 0.5);
+            padding: 80px 40px;
+            border-radius: 20px;
+            margin: 80px auto;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .value-card {
+            background: var(--card-dark);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        body.light-mode .value-card {
+            background: var(--card-light);
+        }
+        
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .value-icon {
+            font-size: 48px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .value-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .team-section {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 40px;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .team-member {
+            text-align: center;
+        }
+        
+        .member-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            overflow: hidden;
+            border: 5px solid var(--primary-color);
+        }
+        
+        .member-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .team-member h3 {
+            font-size: 22px;
+            margin-bottom: 5px;
+        }
+        
+        .team-member .role {
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .member-social {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .member-social a {
+            color: #aaa;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+        
+        .member-social a:hover {
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        .timeline-section {
+            background: rgba(30, 30, 30, 0.5);
+            padding: 80px 40px;
+            border-radius: 20px;
+            margin: 80px auto;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 40px auto 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: var(--primary-color);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            width: 45%;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 55%;
+        }
+        
+        .timeline-content {
+            background: var(--card-dark);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        body.light-mode .timeline-content {
+            background: var(--card-light);
+        }
+        
+        .timeline-year {
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            right: -25px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            border: 4px solid var(--background-dark);
+        }
+        
+        .timeline-item:nth-child(even) .timeline-dot {
+            right: auto;
+            left: -25px;
+        }
+        
+        body.light-mode .timeline-dot {
+            border-color: var(--background-light);
+        }
+        
+        .stats-section {
+            background: linear-gradient(135deg, var(--primary-color), #ff9900);
+            padding: 80px 40px;
+            border-radius: 20px;
+            margin: 80px auto;
+            color: var(--secondary-color);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+        
+        .stat-item h3 {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .stat-item p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+        
+        .testimonials-section {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 40px;
+        }
+        
+        .testimonial-slider {
+            position: relative;
+            overflow: hidden;
+            margin-top: 40px;
+        }
+        
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        .testimonial-item {
+            min-width: 100%;
+            background: var(--card-dark);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 0 10px;
+        }
+        
+        body.light-mode .testimonial-item {
+            background: var(--card-light);
+        }
+        
+        .testimonial-text {
+            font-size: 18px;
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            margin-bottom: 5px;
+        }
+        
+        .author-role {
+            color: var(--primary-color);
+            font-size: 14px;
+        }
+        
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .testimonial-nav button {
+            background: var(--primary-color);
+            color: var(--secondary-color);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-nav button:hover {
+            transform: scale(1.1);
+        }
+        
+        .join-section {
+            text-align: center;
+            padding: 80px 40px;
+            background: rgba(30, 30, 30, 0.5);
+            border-radius: 20px;
+            margin: 80px auto;
+        }
+        
+        .join-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .join-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 80px 20px;
+            }
+            
+            .hero-section h1 {
+                font-size: 36px;
+            }
+            
+            .story-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                left: 60px !important;
+            }
+            
+            .timeline-dot {
+                left: -25px !important;
+                right: auto !important;
+            }
+            
+            .join-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="top-bar">
+            <div class="logo-section">
+                <a href="index.html" class="logo">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2503/2503508.png" alt="PopCornPrise">
+                    <span>PopCornPrise</span>
+                </a>
+                
+                <button class="theme-btn" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                
+                <select class="language-selector">
+                    <option value="en">EN</option>
+                    <option value="ms">MS</option>
+                </select>
+            </div>
+
+            <div class="search-section">
+                <input type="text" class="search-bar" placeholder="Search movies, actors, directors...">
+            </div>
+
+            <div class="user-section">
+                <button class="mobile-menu-btn" id="mobileBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <a href="#" class="pro-btn">PopCorn Pro</a>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="main-nav" id="mainNav">
+            <div class="nav-container">
+                <div class="dropdown">
+                    <button class="nav-btn">
+                        <i class="fas fa-film"></i> Movies
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="index.html#trending">Trending Now</a>
+                        <a href="index.html#upcoming">Upcoming</a>
+                        <a href="index.html#now-playing">Now Playing</a>
+                        <a href="index.html#top-rated">Top Rated</a>
+                    </div>
+                </div>
+                
+                <div class="dropdown">
+                    <button class="nav-btn">
+                        <i class="fas fa-award"></i> Awards
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="oscars.html">
+                            <i class="fas fa-trophy"></i> Oscars 2024
+                        </a>
+                        <a href="emmys.html">
+                            <i class="fas fa-tv"></i> Emmys 2024
+                        </a>
+                        <a href="#golden-globes">
+                            <i class="fas fa-globe-americas"></i> Golden Globes
+                        </a>
+                        <a href="#cannes">
+                            <i class="fas fa-palette"></i> Cannes Festival
+                        </a>
+                    </div>
+                </div>
+                
+                <a href="index.html#community" class="nav-btn">
+                    <i class="fas fa-users"></i> Community
+                </a>
+                <a href="about-us.html" class="nav-btn active">
+                    <i class="fas fa-info-circle"></i> About Us
+                </a>
+                <a href="index.html#reviews" class="nav-btn">
+                    <i class="fas fa-star"></i> Reviews
+                </a>
+                <a href="index.html#submit" class="nav-btn">
+                    <i class="fas fa-edit"></i> Submit Review
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <h1>About PopCornPrise</h1>
+        <p>Your trusted companion in the world of cinema since 2026. We're more than just reviews - we're a community of passionate movie lovers.</p>
+    </section>
+
+    <!-- Our Story -->
+    <section class="story-section">
+        <div class="story-content">
+            <div class="story-image">
+                <img src="https://images.unsplash.com/photo-1489599809516-9827b6d1cf13?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Our Story">
+            </div>
+            <div class="story-text">
+                <h2>Our Story</h2>
+                <p>PopCornPrise was born from a simple idea: to create a movie review platform where every voice matters. Founded in 2026 by a group of film enthusiasts, we noticed a gap in the market for genuine, community-driven movie reviews.</p>
+                <p>What started as a small project among friends has grown into a global community of over 250,000 movie lovers. We believe that everyone has a unique perspective on films, and every opinion deserves to be heard.</p>
+                <p>Today, PopCornPrise stands as one of the most trusted movie review platforms, known for our commitment to authenticity, community engagement, and comprehensive film coverage.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values -->
+    <section class="values-section">
+        <div class="section-header">
+            <h2><i class="fas fa-heart"></i> Our Core Values</h2>
+        </div>
+        
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <h3>Authenticity</h3>
+                <p>We never accept paid reviews. Every rating and review comes from genuine viewers who have actually watched the movies.</p>
+            </div>
+            
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>Community First</h3>
+                <p>Our platform is built by movie lovers, for movie lovers. We actively listen to our community and implement their suggestions.</p>
+            </div>
+            
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <h3>Global Perspective</h3>
+                <p>We celebrate cinema from every corner of the world, from Hollywood blockbusters to indie gems and international cinema.</p>
+            </div>
+            
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h3>Educational Focus</h3>
+                <p>We believe in helping people understand and appreciate the art of filmmaking through our reviews and analysis.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="section-header">
+            <h2><i class="fas fa-user-friends"></i> Meet Our Team</h2>
+            <p>The passionate film enthusiasts behind PopCornPrise</p>
+        </div>
+        
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="member-photo">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Alex Morgan">
+                </div>
+                <h3>Alex Morgan</h3>
+                <div class="role">Founder & CEO</div>
+                <p>Film critic with 15 years of experience. Passionate about indie cinema.</p>
+                <div class="member-social">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div class="team-member">
+                <div class="member-photo">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Sarah Chen">
+                </div>
+                <h3>Sarah Chen</h3>
+                <div class="role">Head of Community</div>
+                <p>Building and nurturing our global community of movie lovers.</p>
+                <div class="member-social">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div class="team-member">
+                <div class="member-photo">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="David Park">
+                </div>
+                <h3>David Park</h3>
+                <div class="role">Lead Film Critic</div>
+                <p>Specializes in horror and sci-fi films. Published film analyst.</p>
+                <div class="member-social">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div class="team-member">
+                <div class="member-photo">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Maya Rodriguez">
+                </div>
+                <h3>Maya Rodriguez</h3>
+                <div class="role">Content Director</div>
+                <p>Expert in international cinema and film festival coverage.</p>
+                <div class="member-social">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="section-header">
+            <h2 style="color: var(--secondary-color);">By The Numbers</h2>
+        </div>
+        
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h3>250K+</h3>
+                <p>Active Members</p>
+            </div>
+            
+            <div class="stat-item">
+                <h3>5M+</h3>
+                <p>Reviews Submitted</p>
+            </div>
+            
+            <div class="stat-item">
+                <h3>50K+</h3>
+                <p>Movies Reviewed</p>
+            </div>
+            
+            <div class="stat-item">
+                <h3>1.2M+</h3>
+                <p>Forum Discussions</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+        <div class="section-header">
+            <h2><i class="fas fa-quote-left"></i> What Our Community Says</h2>
+        </div>
+        
+        <div class="testimonial-slider">
+            <div class="testimonial-track">
+                <div class="testimonial-item">
+                    <div class="testimonial-text">
+                        "PopCornPrise has completely changed how I discover movies. The community reviews are authentic and the platform is incredibly user-friendly. I've discovered so many hidden gems thanks to this platform!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b786d4d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="User">
+                        </div>
+                        <div class="author-info">
+                            <h4>Michael Thompson</h4>
+                            <div class="author-role">Movie Enthusiast</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-item">
+                    <div class="testimonial-text">
+                        "As a film student, PopCornPrise has been invaluable. The detailed reviews and community discussions have deepened my understanding of filmmaking. It's more than a review site - it's an educational platform."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="User">
+                        </div>
+                        <div class="author-info">
+                            <h4>Emma Rodriguez</h4>
+                            <div class="author-role">Film Student</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-item">
+                    <div class="testimonial-text">
+                        "I've been using PopCornPrise since its launch, and watching it grow has been amazing. The team genuinely cares about the community and constantly improves the platform based on user feedback."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="User">
+                        </div>
+                        <div class="author-info">
+                            <h4>James Wilson</h4>
+                            <div class="author-role">Community Member since 2026</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-nav">
+                <button class="prev-testimonial">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="next-testimonial">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Us Section -->
+    <section class="join-section">
+        <h2>Join Our Growing Community</h2>
+        <p>Become part of a global network of movie lovers who share your passion for cinema.</p>
+        
+        <div class="join-buttons">
+            <a href="index.html#submit" class="btn">
+                <i class="fas fa-edit"></i> Start Reviewing
+            </a>
+            <a href="index.html#community" class="btn btn-secondary">
+                <i class="fas fa-users"></i> Join Discussions
+            </a>
+            <a href="mailto:contact@popcornprise.com" class="btn">
+                <i class="fas fa-envelope"></i> Contact Us
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2503/2503508.png" alt="PopCornPrise">
+                    <h3>PopCornPrise</h3>
+                </div>
+                <p>Your trusted movie review platform since 2026.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html#trending">Trending Movies</a></li>
+                    <li><a href="index.html#upcoming">Upcoming Movies</a></li>
+                    <li><a href="index.html#community">Community</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="index.html#submit">Submit Review</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Awards</h4>
+                <ul>
+                    <li><a href="oscars.html">Oscars</a></li>
+                    <li><a href="emmys.html">Emmys</a></li>
+                    <li><a href="#golden-globes">Golden Globes</a></li>
+                    <li><a href="#cannes">Cannes Festival</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">DMCA</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 PopCornPrise. Built for Movie Lovers.</p>
+            <p>This site is inspired by IMDb but created for educational use.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Testimonial slider functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add active class to About Us nav link
+            const aboutLink = document.querySelector('a[href="about-us.html"]');
+            if (aboutLink) {
+                aboutLink.classList.add('active');
+            }
+            
+            // Testimonial slider
+            const testimonialTrack = document.querySelector('.testimonial-track');
+            const testimonials = document.querySelectorAll('.testimonial-item');
+            const prevBtn = document.querySelector('.prev-testimonial');
+            const nextBtn = document.querySelector('.next-testimonial');
+            let currentTestimonial = 0;
+            
+            function updateTestimonialPosition() {
+                const width = testimonials[0].clientWidth;
+                testimonialTrack.style.transform = `translateX(-${currentTestimonial * width}px)`;
+            }
+            
+            function nextTestimonial() {
+                currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+                updateTestimonialPosition();
+            }
+            
+            function prevTestimonial() {
+                currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+                updateTestimonialPosition();
+            }
+            
+            if (prevBtn && nextBtn) {
+                prevBtn.addEventListener('click', prevTestimonial);
+                nextBtn.addEventListener('click', nextTestimonial);
+            }
+            
+            // Auto slide testimonials
+            setInterval(nextTestimonial, 8000);
+            
+            // Initialize position
+            updateTestimonialPosition();
+            
+            // Update on window resize
+            window.addEventListener('resize', updateTestimonialPosition);
+            
+            // Animate stats counter
+            const statNumbers = document.querySelectorAll('.stat-item h3');
+            statNumbers.forEach(stat => {
+                const target = parseInt(stat.textContent);
+                let current = 0;
+                const increment = target / 100;
+                const interval = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(interval);
+                    }
+                    stat.textContent = Math.floor(current).toLocaleString() + '+';
+                }, 30);
+            });
+        });
+    </script>
+</body>
+</html>
