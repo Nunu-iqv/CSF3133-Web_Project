@@ -1,412 +1,1206 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="description" content="Oscar Awards - PopCorn">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Oscar Awards - PopCorn</title>
-<link rel="stylesheet" href="style.css">
-<script src="java.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oscar Awards | PopCornPrise</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="script.js" defer></script>
 </head>
-
 <body>
-<!-- IMDb-like Top Bar -->
-<header>
-    <div class="top-bar">
-        <!-- LEFT: Theme Toggle Button -->
-        <div class="left-section">
-            <button class="theme-toggle" onclick="changeTheme()">🌙 Dark Mode</button>
+    <!-- Header -->
+    <header>
+        <div class="top-bar">
+            <div class="logo-section">
+                <a href="index.html" class="logo">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2503/2503508.png" alt="PopCornPrise">
+                    <span>PopCornPrise</span>
+                </a>
+                
+                <button class="theme-btn" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+
+            <div class="search-section">
+                <input type="text" class="search-bar" placeholder="Search Oscar winners, nominees...">
+            </div>
+
+            <div class="user-section">
+                <button class="mobile-menu-btn" id="mobileBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <a href="#" class="pro-btn">PopCorn Pro</a>
+            </div>
         </div>
-        
-        <!-- CENTER: Logo with Image -->
-        <div class="center-section">
-            <div class="logo-container">
-                <img src="Images and video/popcorn_logo.jpeg" alt="PopCorn Logo" class="site-logo">
-                <a href="index.html" class="logo">PopCorn</a>
+
+        <!-- Navigation -->
+        <nav class="main-nav" id="mainNav">
+            <div class="nav-container">
+                <a href="index.html" class="nav-btn">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                
+                <div class="dropdown">
+                    <button class="nav-btn">
+                        <i class="fas fa-award"></i> Awards
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="oscar.html" class="active">
+                            <i class="fas fa-trophy"></i> Oscar Awards
+                        </a>
+                        <a href="emmy.html">
+                            <i class="fas fa-tv"></i> Emmy Awards
+                        </a>
+                        <a href="#">
+                            <i class="fas fa-globe-americas"></i> Golden Globes
+                        </a>
+                        <a href="#">
+                            <i class="fas fa-palette"></i> Cannes Festival
+                        </a>
+                    </div>
+                </div>
+                
+                <a href="index.html#trending" class="nav-btn">
+                    <i class="fas fa-film"></i> Movies
+                </a>
+                <a href="index.html#reviews" class="nav-btn">
+                    <i class="fas fa-star"></i> Reviews
+                </a>
+                <a href="quiz.html" class="nav-btn">
+                    <i class="fas fa-question-circle"></i> Quiz
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Oscar Hero Section -->
+    <section class="oscar-hero">
+        <div class="oscar-hero-content">
+            <div class="oscar-trophy">
+                <i class="fas fa-trophy"></i>
+            </div>
+            <h1>Academy Awards</h1>
+            <h2>The Oscars</h2>
+            <p class="oscar-subtitle">Celebrating cinematic excellence since 1929</p>
+            <div class="oscar-stats">
+                <div class="stat">
+                    <div class="stat-number">96</div>
+                    <div class="stat-label">Years of History</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">24</div>
+                    <div class="stat-label">Categories</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">9,000+</div>
+                    <div class="stat-label">Voting Members</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="oscar-main">
+        <!-- Current Year Winners -->
+        <section class="oscar-section">
+            <div class="section-header">
+                <h2><i class="fas fa-crown"></i> 96th Academy Awards (2024)</h2>
+                <div class="oscar-year">March 10, 2024</div>
+            </div>
+            
+            <!-- Big Winner -->
+            <div class="big-winner-card">
+                <div class="winner-badge">Best Picture</div>
+                <div class="winner-content">
+                    <div class="winner-poster">
+                        <img src="https://m.media-amazon.com/images/M/MV5BMDBmYTZjNjUtN2M1MS00MTQ2LTk2ODgtNzc2M2QyZGE5NTVjXkEyXkFqcGdeQXVyNzAwMjU2MTY@._V1_FMjpg_UX1000_.jpg" alt="Oppenheimer">
+                        <div class="oscar-count">🏆 7 Oscars</div>
+                    </div>
+                    <div class="winner-details">
+                        <h3>Oppenheimer</h3>
+                        <div class="winner-meta">
+                            <span><i class="fas fa-clock"></i> 3h 0m</span>
+                            <span><i class="fas fa-calendar"></i> 2023</span>
+                            <span><i class="fas fa-film"></i> Biography, Drama</span>
+                        </div>
+                        <p class="winner-description">
+                            The story of American scientist J. Robert Oppenheimer and his role in the development of the atomic bomb.
+                        </p>
+                        <div class="winner-awards">
+                            <div class="award-item">
+                                <span class="award-icon">🎬</span>
+                                <span class="award-text">Best Director: Christopher Nolan</span>
+                            </div>
+                            <div class="award-item">
+                                <span class="award-icon">👨</span>
+                                <span class="award-text">Best Actor: Cillian Murphy</span>
+                            </div>
+                            <div class="award-item">
+                                <span class="award-icon">👨</span>
+                                <span class="award-text">Best Supporting Actor: Robert Downey Jr.</span>
+                            </div>
+                        </div>
+                        <div class="winner-actions">
+                            <a href="#" class="oscar-btn">
+                                <i class="fas fa-play"></i> Watch Trailer
+                            </a>
+                            <a href="#" class="oscar-btn secondary">
+                                <i class="fas fa-star"></i> Rate Movie
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Major Winners Grid -->
+            <div class="winners-grid">
+                <div class="winner-card">
+                    <div class="winner-category">
+                        <i class="fas fa-user"></i> Best Actress
+                    </div>
+                    <div class="winner-person">
+                        <div class="person-photo">
+                            <img src="https://m.media-amazon.com/images/M/MV5BMTg5Mzk0ODkxM15BMl5BanBnXkFtZTcwNTQ1ODQxMw@@._V1_FMjpg_UX1000_.jpg" alt="Emma Stone">
+                        </div>
+                        <h4>Emma Stone</h4>
+                        <p class="movie-title">Poor Things</p>
+                        <div class="oscar-icon">🏆</div>
+                    </div>
+                </div>
+
+                <div class="winner-card">
+                    <div class="winner-category">
+                        <i class="fas fa-user-friends"></i> Best Supporting Actress
+                    </div>
+                    <div class="winner-person">
+                        <div class="person-photo">
+                            <img src="https://m.media-amazon.com/images/M/MV5BMjI5NTA5NTUxNl5BMl5BanBnXkFtZTgwNjEwMjk0NzE@._V1_FMjpg_UX1000_.jpg" alt="Da'Vine Joy Randolph">
+                        </div>
+                        <h4>Da'Vine Joy Randolph</h4>
+                        <p class="movie-title">The Holdovers</p>
+                        <div class="oscar-icon">🏆</div>
+                    </div>
+                </div>
+
+                <div class="winner-card">
+                    <div class="winner-category">
+                        <i class="fas fa-pen"></i> Best Original Screenplay
+                    </div>
+                    <div class="winner-movie">
+                        <h4>Anatomy of a Fall</h4>
+                        <p class="movie-director">Justine Triet</p>
+                        <div class="oscar-icon">🏆</div>
+                    </div>
+                </div>
+
+                <div class="winner-card">
+                    <div class="winner-category">
+                        <i class="fas fa-video"></i> Best Animated Feature
+                    </div>
+                    <div class="winner-movie">
+                        <h4>The Boy and the Heron</h4>
+                        <p class="movie-director">Hayao Miyazaki</p>
+                        <div class="oscar-icon">🏆</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Oscar History Timeline -->
+        <section class="oscar-section timeline-section">
+            <div class="section-header">
+                <h2><i class="fas fa-history"></i> Oscar History Timeline</h2>
+                <p class="section-subtitle">Major moments in Academy Awards history</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">1929</div>
+                    <div class="timeline-content">
+                        <h4>First Academy Awards</h4>
+                        <p>First ceremony held at Hollywood Roosevelt Hotel. "Wings" wins Best Picture.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">1940</div>
+                    <div class="timeline-content">
+                        <h4>First Color Winner</h4>
+                        <p>"Gone with the Wind" becomes first color film to win Best Picture.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2002</div>
+                    <div class="timeline-content">
+                        <h4>First Animated Feature</h4>
+                        <p>New category introduced: Best Animated Feature. "Shrek" wins first award.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2020</div>
+                    <div class="timeline-content">
+                        <h4>Historic Win</h4>
+                        <p>"Parasite" becomes first non-English language film to win Best Picture.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Oscar Records -->
+        <section class="oscar-section records-section">
+            <div class="section-header">
+                <h2><i class="fas fa-chart-line"></i> Oscar Records & Statistics</h2>
+            </div>
+            
+            <div class="records-grid">
+                <div class="record-card">
+                    <div class="record-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h4>Most Oscars Won</h4>
+                    <div class="record-detail">
+                        <strong>Walt Disney</strong>
+                        <p>26 competitive Oscars</p>
+                    </div>
+                </div>
+                
+                <div class="record-card">
+                    <div class="record-icon">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <h4>Most Nominations</h4>
+                    <div class="record-detail">
+                        <strong>Meryl Streep</strong>
+                        <p>21 acting nominations</p>
+                    </div>
+                </div>
+                
+                <div class="record-card">
+                    <div class="record-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h4>Most Wins by Film</h4>
+                    <div class="record-detail">
+                        <strong>Ben-Hur (1959)</strong>
+                        <p>11 Oscars</p>
+                    </div>
+                </div>
+                
+                <div class="record-card">
+                    <div class="record-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h4>Youngest Winner</h4>
+                    <div class="record-detail">
+                        <strong>Tatum O'Neal</strong>
+                        <p>Age 10 (Paper Moon, 1973)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Past Winners Table -->
+        <section class="oscar-section">
+            <div class="section-header">
+                <h2><i class="fas fa-list-ol"></i> Recent Best Picture Winners</h2>
+            </div>
+            
+            <div class="winners-table-container">
+                <table class="oscar-table">
+                    <thead>
+                        <tr>
+                            <th>Year</th>
+                            <th>Movie</th>
+                            <th>Director</th>
+                            <th>Total Oscars</th>
+                            <th>Rating</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2023</td>
+                            <td class="movie-cell">Everything Everywhere All at Once</td>
+                            <td>Daniels</td>
+                            <td><span class="oscar-badge">7</span></td>
+                            <td><span class="rating">7.8</span></td>
+                        </tr>
+                        <tr>
+                            <td>2022</td>
+                            <td class="movie-cell">CODA</td>
+                            <td>Sian Heder</td>
+                            <td><span class="oscar-badge">3</span></td>
+                            <td><span class="rating">8.0</span></td>
+                        </tr>
+                        <tr>
+                            <td>2021</td>
+                            <td class="movie-cell">Nomadland</td>
+                            <td>Chloé Zhao</td>
+                            <td><span class="oscar-badge">3</span></td>
+                            <td><span class="rating">7.3</span></td>
+                        </tr>
+                        <tr>
+                            <td>2020</td>
+                            <td class="movie-cell">Parasite</td>
+                            <td>Bong Joon-ho</td>
+                            <td><span class="oscar-badge">4</span></td>
+                            <td><span class="rating">8.6</span></td>
+                        </tr>
+                        <tr>
+                            <td>2019</td>
+                            <td class="movie-cell">Green Book</td>
+                            <td>Peter Farrelly</td>
+                            <td><span class="oscar-badge">3</span></td>
+                            <td><span class="rating">8.2</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Oscar Quiz CTA -->
+        <section class="oscar-section quiz-cta">
+            <div class="quiz-cta-content">
+                <div class="quiz-icon">
+                    <i class="fas fa-question-circle"></i>
+                </div>
+                <div class="quiz-text">
+                    <h3>Test Your Oscar Knowledge!</h3>
+                    <p>Take our Oscar Quiz and see how much you know about Academy Award winners and history.</p>
+                </div>
+                <a href="quiz.html" class="cta-btn">
+                    Take the Quiz <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2503/2503508.png" alt="PopCornPrise">
+                    <h3>PopCornPrise</h3>
+                </div>
+                <p>Your guide to the Academy Awards and cinematic excellence.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Oscar Categories</h4>
+                <ul>
+                    <li><a href="#">Best Picture</a></li>
+                    <li><a href="#">Best Director</a></li>
+                    <li><a href="#">Acting Awards</a></li>
+                    <li><a href="#">Screenplay Awards</a></li>
+                    <li><a href="#">Technical Awards</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#">Oscar History</a></li>
+                    <li><a href="#">Nominees Archive</a></li>
+                    <li><a href="#">Winners Gallery</a></li>
+                    <li><a href="#">Red Carpet</a></li>
+                    <li><a href="#">Oscar Trivia</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#trending">Movies</a></li>
+                    <li><a href="index.html#reviews">Reviews</a></li>
+                    <li><a href="quiz.html">Movie Quiz</a></li>
+                    <li><a href="emmy.html">Emmys</a></li>
+                </ul>
             </div>
         </div>
         
-        <!-- RIGHT: Language and Pro -->
-        <div class="right-section">
-            <a href="#" class="imdb-pro">PopCorn Pro</a>
-            <span class="language-selector">EN</span>
+        <div class="footer-bottom">
+            <p>&copy; 2026 PopCornPrise. Academy Awards data for educational purposes.</p>
+            <p>The Oscars® is a registered trademark of the Academy of Motion Picture Arts and Sciences.</p>
         </div>
-    </div>
-    
-    <!-- Main Navigation -->
-    <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
-    <nav class="main-nav">
-        <div class="dropdown">
-            <button class="dropdown-btn" onclick="toggleDropdown(this)">
-                Movies ▼
-            </button>
-            <div class="dropdown-content">
-                <a href="WhatToWatch.html">What to watch</a>
-                <a href="TopRated.html">Top Rated</a>
-            </div>
-        </div>
+    </footer>
+
+    <!-- OSCAR PAGE STYLES (Put at bottom of page) -->
+    <style>
+        /* ========================================
+           OSCAR AWARDS PAGE STYLES - BOTTOM OF PAGE
+           ======================================== */
         
-        <div class="dropdown">
-            <button class="dropdown-btn" onclick="toggleDropdown(this)">
-                Awards & Events ▼
-            </button>
-            <div class="dropdown-content">
-                <a href="Oscar.html">Oscars</a>
-                <a href="Emmy.html">Emmys</a>
-            </div>
-        </div>
-        
-        <a href="index.html#reviews" class="dropdown-btn">Reviews</a>
-        <a href="index.html#ranking" class="dropdown-btn">Ranking</a>
-        <a href="index.html#submit" class="dropdown-btn">Submit Review</a>
-        <a href="index.html#community" class="dropdown-btn">Community</a> 
-        <a href="index.html#about" class="dropdown-btn">About</a>
-    </nav>
-</header>
+        /* Oscar Hero Section */
+        .oscar-hero {
+            background: linear-gradient(135deg, 
+                rgba(212, 175, 55, 0.95) 0%, 
+                rgba(255, 215, 0, 0.9) 50%,
+                rgba(212, 175, 55, 0.95) 100%),
+                url('https://images.unsplash.com/photo-1513106580091-1d82408b8cd6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 40px;
+            text-align: center;
+            color: #000;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
 
-<!-- Oscar Awards Header -->
-<section class="hero" style="height: 200px; background: linear-gradient(135deg, #FFD700 0%, #D4AF37 100%);">
-    <div class="hero-content">
-        <h1>🏆 Oscar Awards</h1>
-        <p>Celebrating the best in movies</p>
-    </div>
-</section>
+        .oscar-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, 
+                rgba(255, 255, 255, 0.1) 0%,
+                rgba(255, 255, 255, 0.05) 100%);
+        }
 
-<!-- Oscar Awards Content -->
-<section class="section">
-    <h2 class="title">Latest Oscar Winners 2024</h2>
-    
-    <!-- Big Winner -->
-    <div class="big-winner">
-        <h3>🏆 Best Picture</h3>
-        <div class="winner-card">
-            <img src="Images and video/Shawnshank.jpg" alt="Oppenheimer">
-            <div class="winner-info">
-                <h2>Oppenheimer</h2>
-                <p>Best Picture • 7 Oscars</p>
-                <p>Directed by Christopher Nolan</p>
-                <p class="description">A movie about the scientist who created the atomic bomb.</p>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Other Winners -->
-    <h2 class="title">Other Winners</h2>
-    
-    <div class="winners-grid">
-        <div class="small-winner">
-            <h3>🎬 Best Director</h3>
-            <p><strong>Christopher Nolan</strong></p>
-            <p>Oppenheimer</p>
-        </div>
-        
-        <div class="small-winner">
-            <h3>👨 Best Actor</h3>
-            <p><strong>Cillian Murphy</strong></p>
-            <p>Oppenheimer</p>
-        </div>
-        
-        <div class="small-winner">
-            <h3>👩 Best Actress</h3>
-            <p><strong>Emma Stone</strong></p>
-            <p>Poor Things</p>
-        </div>
-        
-        <div class="small-winner">
-            <h3>👨 Best Supporting Actor</h3>
-            <p><strong>Robert Downey Jr.</strong></p>
-            <p>Oppenheimer</p>
-        </div>
-        
-        <div class="small-winner">
-            <h3>👩 Best Supporting Actress</h3>
-            <p><strong>Da'Vine Joy Randolph</strong></p>
-            <p>The Holdovers</p>
-        </div>
-        
-        <div class="small-winner">
-            <h3>📝 Best Original Screenplay</h3>
-            <p><strong>Anatomy of a Fall</strong></p>
-            <p>Justine Triet</p>
-        </div>
-    </div>
-    
-    <!-- Past Winners Table -->
-    <h2 class="title">Past Oscar Winners</h2>
-    
-    <table class="simple-table">
-        <tr>
-            <th>Year</th>
-            <th>Best Picture</th>
-            <th>Best Actor</th>
-        </tr>
-        <tr>
-            <td>2023</td>
-            <td>Everything Everywhere All at Once</td>
-            <td>Brendan Fraser</td>
-        </tr>
-        <tr>
-            <td>2022</td>
-            <td>CODA</td>
-            <td>Will Smith</td>
-        </tr>
-        <tr>
-            <td>2021</td>
-            <td>Nomadland</td>
-            <td>Anthony Hopkins</td>
-        </tr>
-        <tr>
-            <td>2020</td>
-            <td>Parasite</td>
-            <td>Joaquin Phoenix</td>
-        </tr>
-        <tr>
-            <td>2019</td>
-            <td>Green Book</td>
-            <td>Rami Malek</td>
-        </tr>
-    </table>
-    
-    <!-- About Oscars -->
-    <div class="about-awards">
-        <h2 class="title">What are the Oscar Awards?</h2>
-        <div class="about-content">
-            <p>🌟 <strong>The Oscar Awards</strong> (Academy Awards) are awards for excellence in film.</p>
-            <p>📅 <strong>First started:</strong> 1929</p>
-            <p>🏆 <strong>Most wins:</strong> Walt Disney (26 Oscars)</p>
-            <p>🎬 <strong>Awards for:</strong> Movies, actors, directors, writers</p>
-            <p>⭐ <strong>Most famous award:</strong> The gold statuette called "Oscar"</p>
-        </div>
-    </div>
-</section>
+        .oscar-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-<footer>
-    <p>Contact us: <a href="mailto:contact@moviesphere.com">contact@moviesphere.com</a></p>
-    <p>Follow us: 
-        <a href="#">Twitter</a> | 
-        <a href="#">Facebook</a> | 
-        <a href="#">Instagram</a>
-    </p>
-    <p>© 2026 MovieSphere. All data is for educational purposes.</p>
-</footer>
+        .oscar-trophy {
+            font-size: 80px;
+            color: #000;
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+        }
 
-<style>
-/* Oscar Specific Styles */
-.hero {
-    color: #000;
-}
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
 
-.big-winner {
-    max-width: 800px;
-    margin: 0 auto 40px auto;
-}
+        .oscar-hero h1 {
+            font-size: 56px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #000;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
+        }
 
-.big-winner h3 {
-    color: #D4AF37;
-    font-size: 24px;
-    margin-bottom: 15px;
-    text-align: center;
-}
+        .oscar-hero h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: #333;
+        }
 
-.winner-card {
-    background: #1a1a1a;
-    border-radius: 10px;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    border: 2px solid #FFD700;
-}
+        .oscar-subtitle {
+            font-size: 18px;
+            color: #444;
+            margin-bottom: 40px;
+            font-weight: 500;
+        }
 
-.winner-card img {
-    width: 150px;
-    height: 200px;
-    border-radius: 8px;
-    object-fit: cover;
-}
+        .oscar-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
 
-.winner-info h2 {
-    color: white;
-    font-size: 28px;
-    margin-bottom: 10px;
-}
+        .stat {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px 30px;
+            border-radius: 15px;
+            min-width: 150px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
 
-.winner-info p {
-    color: #ccc;
-    margin: 8px 0;
-}
+        .stat-number {
+            font-size: 42px;
+            font-weight: bold;
+            color: #D4AF37;
+            margin-bottom: 5px;
+        }
 
-.winner-info .description {
-    color: #aaa;
-    font-style: italic;
-    margin-top: 15px;
-}
+        .stat-label {
+            font-size: 14px;
+            color: #666;
+            font-weight: 600;
+        }
 
-.winners-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    margin: 40px 0;
-}
+        /* Oscar Main Content */
+        .oscar-main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px 60px;
+        }
 
-.small-winner {
-    background: #1a1a1a;
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    border: 1px solid #333;
-    transition: transform 0.3s;
-}
+        .oscar-section {
+            margin-bottom: 60px;
+        }
 
-.small-winner:hover {
-    transform: translateY(-5px);
-    border-color: #FFD700;
-}
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #D4AF37;
+        }
 
-.small-winner h3 {
-    color: #FFD700;
-    margin-bottom: 15px;
-    font-size: 18px;
-}
+        .section-header h2 {
+            font-size: 32px;
+            color: #D4AF37;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-.small-winner p {
-    color: white;
-    margin: 5px 0;
-}
+        .oscar-year {
+            background: #D4AF37;
+            color: #000;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 14px;
+        }
 
-.small-winner strong {
-    color: #FFD700;
-    font-size: 20px;
-}
+        .section-subtitle {
+            color: #999;
+            font-size: 16px;
+            margin-top: 5px;
+        }
 
-.simple-table {
-    width: 100%;
-    max-width: 800px;
-    margin: 40px auto;
-    border-collapse: collapse;
-    background: #1a1a1a;
-    border-radius: 8px;
-    overflow: hidden;
-}
+        /* Big Winner Card */
+        .big-winner-card {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(255, 215, 0, 0.05) 100%);
+            border: 2px solid #D4AF37;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 40px;
+            position: relative;
+        }
 
-.simple-table th {
-    background: #D4AF37;
-    color: #000;
-    padding: 15px;
-    text-align: left;
-}
+        .winner-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #D4AF37;
+            color: #000;
+            padding: 10px 30px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 18px;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+        }
 
-.simple-table td {
-    padding: 12px 15px;
-    border-bottom: 1px solid #333;
-    color: #ccc;
-}
+        .winner-content {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 40px;
+            align-items: center;
+        }
 
-.simple-table tr:hover {
-    background: #222;
-}
+        @media (max-width: 1024px) {
+            .winner-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
 
-.about-awards {
-    background: #1a1a1a;
-    border-radius: 10px;
-    padding: 30px;
-    margin-top: 50px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
+        .winner-poster {
+            position: relative;
+        }
 
-.about-content {
-    background: #222;
-    padding: 20px;
-    border-radius: 8px;
-    margin-top: 20px;
-}
+        .winner-poster img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
 
-.about-content p {
-    color: #ccc;
-    margin: 10px 0;
-    font-size: 16px;
-    padding: 8px 0;
-    border-bottom: 1px solid #333;
-}
+        .oscar-count {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #D4AF37;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-weight: bold;
+            font-size: 14px;
+        }
 
-.about-content p:last-child {
-    border-bottom: none;
-}
+        .winner-details h3 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: #D4AF37;
+        }
 
-/* Light Theme */
-body.light .winner-card,
-body.light .small-winner,
-body.light .simple-table,
-body.light .about-awards {
-    background: #fff;
-    border: 1px solid #ddd;
-}
+        .winner-meta {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            color: #999;
+            font-size: 14px;
+        }
 
-body.light .winner-info h2,
-body.light .small-winner p {
-    color: #333;
-}
+        .winner-meta i {
+            color: #D4AF37;
+            margin-right: 5px;
+        }
 
-body.light .winner-info p,
-body.light .about-content p {
-    color: #666;
-}
+        .winner-description {
+            color: #ccc;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            font-size: 16px;
+        }
 
-body.light .simple-table th {
-    background: #D4AF37;
-    color: #000;
-}
+        body.light-mode .winner-description {
+            color: #666;
+        }
 
-body.light .simple-table td {
-    color: #666;
-}
+        .winner-awards {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
 
-body.light .simple-table tr:hover {
-    background: #f5f5f5;
-}
+        .award-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: rgba(212, 175, 55, 0.1);
+            padding: 12px 20px;
+            border-radius: 8px;
+            border-left: 4px solid #D4AF37;
+        }
 
-body.light .about-content {
-    background: #f5f5f5;
-}
+        .award-icon {
+            font-size: 20px;
+        }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .winner-card {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .winner-card img {
-        width: 120px;
-        height: 160px;
-    }
-    
-    .winners-grid {
-        grid-template-columns: repeat(2, 1fr);
-        padding: 0 10px;
-    }
-    
-    .simple-table {
-        font-size: 14px;
-    }
-}
+        .award-text {
+            color: #ddd;
+            font-size: 15px;
+        }
 
-@media (max-width: 480px) {
-    .winners-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .simple-table {
-        font-size: 12px;
-    }
-    
-    .simple-table th,
-    .simple-table td {
-        padding: 10px;
-    }
-}
-</style>
+        body.light-mode .award-text {
+            color: #333;
+        }
+
+        .winner-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .oscar-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 25px;
+            background: #D4AF37;
+            color: #000;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .oscar-btn:hover {
+            background: #FFD700;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .oscar-btn.secondary {
+            background: rgba(212, 175, 55, 0.1);
+            color: #D4AF37;
+            border: 2px solid #D4AF37;
+        }
+
+        .oscar-btn.secondary:hover {
+            background: rgba(212, 175, 55, 0.2);
+        }
+
+        /* Winners Grid */
+        .winners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .winner-card {
+            background: var(--card-dark);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            position: relative;
+        }
+
+        body.light-mode .winner-card {
+            background: var(--card-light);
+        }
+
+        .winner-card:hover {
+            transform: translateY(-5px);
+            border-color: #D4AF37;
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.2);
+        }
+
+        .winner-category {
+            color: #D4AF37;
+            font-weight: bold;
+            margin-bottom: 20px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .person-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            overflow: hidden;
+            border: 3px solid #D4AF37;
+        }
+
+        .person-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .winner-card h4 {
+            font-size: 20px;
+            margin-bottom: 5px;
+            color: white;
+        }
+
+        body.light-mode .winner-card h4 {
+            color: #333;
+        }
+
+        .movie-title {
+            color: #999;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .oscar-icon {
+            font-size: 30px;
+            color: #D4AF37;
+        }
+
+        /* Timeline Section */
+        .timeline-section {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.7) 100%);
+            border-radius: 20px;
+            padding: 40px;
+        }
+
+        body.light-mode .timeline-section {
+            background: linear-gradient(135deg, rgba(240, 240, 240, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 40px auto 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: #D4AF37;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            padding-left: 80px;
+        }
+
+        .timeline-year {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 60px;
+            height: 60px;
+            background: #D4AF37;
+            color: #000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+            z-index: 2;
+        }
+
+        .timeline-content {
+            background: var(--card-dark);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #D4AF37;
+        }
+
+        body.light-mode .timeline-content {
+            background: var(--card-light);
+        }
+
+        .timeline-content h4 {
+            color: #D4AF37;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .timeline-content p {
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        body.light-mode .timeline-content p {
+            color: #666;
+        }
+
+        /* Records Section */
+        .records-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .record-card {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(255, 215, 0, 0.05) 100%);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .record-card:hover {
+            transform: translateY(-5px);
+            border-color: #D4AF37;
+        }
+
+        .record-icon {
+            font-size: 40px;
+            color: #D4AF37;
+            margin-bottom: 20px;
+        }
+
+        .record-card h4 {
+            color: #D4AF37;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .record-detail {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+        body.light-mode .record-detail {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .record-detail strong {
+            font-size: 22px;
+            color: white;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        body.light-mode .record-detail strong {
+            color: #333;
+        }
+
+        .record-detail p {
+            color: #999;
+            font-size: 14px;
+        }
+
+        /* Oscar Table */
+        .winners-table-container {
+            overflow-x: auto;
+            margin-top: 20px;
+        }
+
+        .oscar-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: var(--card-dark);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        body.light-mode .oscar-table {
+            background: var(--card-light);
+        }
+
+        .oscar-table th {
+            background: #D4AF37;
+            color: #000;
+            padding: 20px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .oscar-table td {
+            padding: 18px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ccc;
+        }
+
+        body.light-mode .oscar-table td {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            color: #666;
+        }
+
+        .oscar-table tr:hover {
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        .movie-cell {
+            font-weight: 500;
+            color: white;
+        }
+
+        body.light-mode .movie-cell {
+            color: #333;
+        }
+
+        .oscar-badge {
+            display: inline-block;
+            background: #D4AF37;
+            color: #000;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        .rating {
+            color: #D4AF37;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        /* Quiz CTA */
+        .quiz-cta {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, rgba(255, 215, 0, 0.1) 100%);
+            border-radius: 20px;
+            padding: 40px;
+            border: 2px solid #D4AF37;
+        }
+
+        .quiz-cta-content {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .quiz-cta-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        .quiz-icon {
+            font-size: 60px;
+            color: #D4AF37;
+        }
+
+        .quiz-text {
+            flex: 1;
+        }
+
+        .quiz-text h3 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #D4AF37;
+        }
+
+        .quiz-text p {
+            color: #ccc;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        body.light-mode .quiz-text p {
+            color: #666;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 35px;
+            background: #D4AF37;
+            color: #000;
+            border-radius: 10px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .cta-btn:hover {
+            background: #FFD700;
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .oscar-stats {
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+            
+            .stat {
+                min-width: 120px;
+                padding: 15px 20px;
+            }
+            
+            .stat-number {
+                font-size: 32px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .oscar-hero {
+                padding: 60px 20px;
+            }
+            
+            .oscar-hero h1 {
+                font-size: 42px;
+            }
+            
+            .oscar-hero h2 {
+                font-size: 24px;
+            }
+            
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-item {
+                padding-left: 60px;
+            }
+            
+            .timeline-year {
+                width: 40px;
+                height: 40px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .oscar-hero h1 {
+                font-size: 32px;
+            }
+            
+            .oscar-hero h2 {
+                font-size: 20px;
+            }
+            
+            .oscar-trophy {
+                font-size: 60px;
+            }
+            
+            .winner-actions {
+                flex-direction: column;
+            }
+            
+            .oscar-btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .big-winner-card {
+                padding: 20px;
+            }
+            
+            .winner-badge {
+                font-size: 14px;
+                padding: 8px 20px;
+            }
+        }
+
+        /* Light Mode Adjustments */
+        body.light-mode .oscar-hero {
+            color: #333;
+        }
+
+        body.light-mode .oscar-hero h1,
+        body.light-mode .oscar-hero h2 {
+            color: #333;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+        }
+
+        body.light-mode .oscar-subtitle {
+            color: #555;
+        }
+
+        body.light-mode .stat {
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        body.light-mode .big-winner-card {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(255, 215, 0, 0.02) 100%);
+        }
+
+        body.light-mode .award-item {
+            background: rgba(212, 175, 55, 0.08);
+        }
+
+        body.light-mode .winner-category {
+            color: #B8860B;
+        }
+
+        body.light-mode .quiz-cta {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(255, 215, 0, 0.05) 100%);
+        }
+    </style>
 </body>
 </html>
