@@ -1,408 +1,1283 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="description" content="Emmy Awards - PopCorn">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Emmy Awards - PopCorn</title>
-<link rel="stylesheet" href="style.css">
-<script src="java.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emmy Awards | PopCornPrise</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="script.js" defer></script>
 </head>
-
 <body>
-<!-- IMDb-like Top Bar -->
-<header>
-    <div class="top-bar">
-        <!-- LEFT: Theme Toggle Button -->
-        <div class="left-section">
-            <button class="theme-toggle" onclick="changeTheme()">🌙 Dark Mode</button>
+    <!-- Header -->
+    <header>
+        <div class="top-bar">
+            <div class="logo-section">
+                <a href="index.html" class="logo">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2503/2503508.png" alt="PopCornPrise">
+                    <span>PopCornPrise</span>
+                </a>
+                
+                <button class="theme-btn" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                
+                <select class="language-selector">
+                    <option value="en">EN</option>
+                    <option value="ms">MS</option>
+                </select>
+            </div>
+
+            <div class="search-section">
+                <input type="text" class="search-bar" placeholder="Search Emmy winners, TV shows...">
+            </div>
+
+            <div class="user-section">
+                <button class="mobile-menu-btn" id="mobileBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <a href="#" class="pro-btn">PopCorn Pro</a>
+            </div>
         </div>
-        
-        <!-- CENTER: Logo with Image -->
-        <div class="center-section">
-            <div class="logo-container">
-                <img src="Images and video/popcorn_logo.jpeg" alt="PopCorn Logo" class="site-logo">
-                <a href="index.html" class="logo">PopCorn</a>
+
+        <!-- Navigation -->
+        <nav class="main-nav" id="mainNav">
+            <div class="nav-container">
+                <a href="index.html" class="nav-btn">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                
+                <div class="dropdown">
+                    <button class="nav-btn">
+                        <i class="fas fa-award"></i> Awards
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="oscar.html">
+                            <i class="fas fa-trophy"></i> Oscar Awards
+                        </a>
+                        <a href="emmy.html" class="active">
+                            <i class="fas fa-tv"></i> Emmy Awards
+                        </a>
+                        <a href="#">
+                            <i class="fas fa-globe-americas"></i> Golden Globes
+                        </a>
+                        <a href="#">
+                            <i class="fas fa-palette"></i> Cannes Festival
+                        </a>
+                    </div>
+                </div>
+                
+                <a href="index.html#trending" class="nav-btn">
+                    <i class="fas fa-film"></i> Movies
+                </a>
+                <a href="index.html#reviews" class="nav-btn">
+                    <i class="fas fa-star"></i> Reviews
+                </a>
+                <a href="index.html#community" class="nav-btn">
+                    <i class="fas fa-users"></i> Community
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Emmy Hero Section -->
+    <section class="emmy-hero">
+        <div class="emmy-hero-content">
+            <div class="emmy-icon">
+                <i class="fas fa-tv"></i>
+            </div>
+            <h1>Primetime Emmy Awards</h1>
+            <h2>Television's Highest Honor</h2>
+            <p class="emmy-subtitle">Celebrating excellence in television programming since 1949</p>
+            <div class="emmy-stats">
+                <div class="stat">
+                    <div class="stat-number">75</div>
+                    <div class="stat-label">Years of History</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">120+</div>
+                    <div class="stat-label">Categories</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">20,000+</div>
+                    <div class="stat-label">Industry Members</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="emmy-main">
+        <!-- Current Year Winners -->
+        <section class="emmy-section">
+            <div class="section-header">
+                <h2><i class="fas fa-crown"></i> 75th Primetime Emmy Awards (2024)</h2>
+                <div class="emmy-year">January 15, 2024</div>
+            </div>
+            
+            <!-- Big Winner -->
+            <div class="big-winner-card">
+                <div class="winner-badge">Outstanding Drama Series</div>
+                <div class="winner-content">
+                    <div class="winner-poster">
+                        <img src="https://m.media-amazon.com/images/M/MV5BODBjM2M4YTQtNmJlMS00MGU1LWIyMGYtNjk0YzI4Yjg1OTAwXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_FMjpg_UX1000_.jpg" alt="Succession">
+                        <div class="emmy-count">🏆 6 Emmys</div>
+                    </div>
+                    <div class="winner-details">
+                        <h3>Succession</h3>
+                        <div class="winner-meta">
+                            <span><i class="fas fa-clock"></i> 4 Seasons</span>
+                            <span><i class="fas fa-calendar"></i> 2018-2023</span>
+                            <span><i class="fas fa-film"></i> Drama, Comedy</span>
+                        </div>
+                        <p class="winner-description">
+                            The saga of the Roy family, owners of a global media and entertainment empire, who are fighting for control of the company.
+                        </p>
+                        <div class="winner-awards">
+                            <div class="award-item">
+                                <span class="award-icon">🎬</span>
+                                <span class="award-text">Outstanding Drama Series</span>
+                            </div>
+                            <div class="award-item">
+                                <span class="award-icon">👨</span>
+                                <span class="award-text">Lead Actor: Kieran Culkin</span>
+                            </div>
+                            <div class="award-item">
+                                <span class="award-icon">👩</span>
+                                <span class="award-text">Lead Actress: Sarah Snook</span>
+                            </div>
+                        </div>
+                        <div class="winner-actions">
+                            <a href="#" class="emmy-btn">
+                                <i class="fas fa-play"></i> Watch Trailer
+                            </a>
+                            <a href="#" class="emmy-btn secondary">
+                                <i class="fas fa-star"></i> Rate Show
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Major Winners Grid -->
+            <div class="winners-grid">
+                <div class="winner-card">
+                    <div class="winner-category">
+                        <i class="fas fa-theater-masks"></i> Outstanding Comedy Series
+                    </div>
+                    <div class="winner-show">
+                        <h4>The Bear</h4>
+                        <p class="show-creator">Christopher Storer</p>
+                        <div class="emmy-icon">🏆</div>
+                        <div class="award-count">6 Emmys</div>
+                    </div>
+                </div>
+
+                <div class="winner-card">
+                    <div class="winner-category">
+                        <i class="fas fa-user"></i> Outstanding Lead Actor
+                    </div>
+                    <div class="winner-person">
+                        <div class="person-photo">
+                            <img src="https://m.media-amazon.com/images/M/MV5BMTM3OTUyMzY3M15BMl5BanBnXkFtZTcwNjkwODg5Mw@@._V1_FMjpg_UX1000_.jpg" alt="Jeremy Allen White">
+                        </div>
+                        <h4>Jeremy Allen White</h4>
+                        <p class="show-title">The Bear</p>
+                        <div class="emmy-icon">🏆</div>
+                    </div>
+                </div>
+
+                <div class="winner-card">
+                    <div class="winner-category">
+                        <i class="fas fa-user-friends"></i> Outstanding Lead Actress
+                    </div>
+                    <div class="winner-person">
+                        <div class="person-photo">
+                            <img src="https://m.media-amazon.com/images/M/MV5BMTYxMjgwNDg4M15BMl5BanBnXkFtZTcwOTU5Mzg0NA@@._V1_FMjpg_UX1000_.jpg" alt="Quinta Brunson">
+                        </div>
+                        <h4>Quinta Brunson</h4>
+                        <p class="show-title">Abbott Elementary</p>
+                        <div class="emmy-icon">🏆</div>
+                    </div>
+                </div>
+
+                <div class="winner-card">
+                    <div class="winner-category">
+                        <i class="fas fa-video"></i> Outstanding Limited Series
+                    </div>
+                    <div class="winner-show">
+                        <h4>Beef</h4>
+                        <p class="show-creator">Lee Sung Jin</p>
+                        <div class="emmy-icon">🏆</div>
+                        <div class="award-count">5 Emmys</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Emmy Categories -->
+        <section class="emmy-section categories-section">
+            <div class="section-header">
+                <h2><i class="fas fa-list"></i> Major Emmy Categories</h2>
+                <p class="section-subtitle">Key awards in television excellence</p>
+            </div>
+            
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-theater-masks"></i>
+                    </div>
+                    <h4>Comedy Series</h4>
+                    <div class="category-winner">
+                        <strong>The Bear</strong>
+                        <span>2023-2024</span>
+                    </div>
+                    <p class="category-desc">Outstanding comedy television series</p>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-drama"></i>
+                    </div>
+                    <h4>Drama Series</h4>
+                    <div class="category-winner">
+                        <strong>Succession</strong>
+                        <span>2020, 2022, 2024</span>
+                    </div>
+                    <p class="category-desc">Outstanding drama television series</p>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <h4>Limited Series</h4>
+                    <div class="category-winner">
+                        <strong>Beef</strong>
+                        <span>2024</span>
+                    </div>
+                    <p class="category-desc">Outstanding limited or anthology series</p>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-tv"></i>
+                    </div>
+                    <h4>Reality Competition</h4>
+                    <div class="category-winner">
+                        <strong>RuPaul's Drag Race</strong>
+                        <span>2018-2024</span>
+                    </div>
+                    <p class="category-desc">Outstanding reality competition program</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Emmy History -->
+        <section class="emmy-section history-section">
+            <div class="section-header">
+                <h2><i class="fas fa-history"></i> Emmy History Highlights</h2>
+            </div>
+            
+            <div class="history-timeline">
+                <div class="history-item">
+                    <div class="history-year">1949</div>
+                    <div class="history-content">
+                        <h4>First Emmy Awards</h4>
+                        <p>First ceremony held at Hollywood Athletic Club. Shirley Dinsdale becomes first Emmy winner.</p>
+                    </div>
+                </div>
+                
+                <div class="history-item">
+                    <div class="history-year">1966</div>
+                    <div class="history-content">
+                        <h4>Color Broadcast</h4>
+                        <p>First color broadcast of Emmy Awards ceremony on NBC.</p>
+                    </div>
+                </div>
+                
+                <div class="history-item">
+                    <div class="history-year">2000</div>
+                    <div class="history-content">
+                        <h4>Reality TV Era</h4>
+                        <p>"Survivor" wins first Emmy for Outstanding Reality-Competition Program.</p>
+                    </div>
+                </div>
+                
+                <div class="history-item">
+                    <div class="history-year">2021</div>
+                    <div class="history-content">
+                        <h4>Streaming Dominance</h4>
+                        <p>Netflix earns most nominations, signaling streaming platform dominance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Emmy Records -->
+        <section class="emmy-section records-section">
+            <div class="section-header">
+                <h2><i class="fas fa-chart-line"></i> Emmy Records & Statistics</h2>
+            </div>
+            
+            <div class="records-grid">
+                <div class="record-card">
+                    <div class="record-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h4>Most Emmy Wins</h4>
+                    <div class="record-detail">
+                        <strong>Saturday Night Live</strong>
+                        <p>82 Emmy Awards</p>
+                    </div>
+                </div>
+                
+                <div class="record-card">
+                    <div class="record-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h4>Most Acting Emmys</h4>
+                    <div class="record-detail">
+                        <strong>Cloris Leachman</strong>
+                        <p>8 Primetime Emmys</p>
+                    </div>
+                </div>
+                
+                <div class="record-card">
+                    <div class="record-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h4>Most Nominations</h4>
+                    <div class="record-detail">
+                        <strong>Saturday Night Live</strong>
+                        <p>306 Emmy nominations</p>
+                    </div>
+                </div>
+                
+                <div class="record-card">
+                    <div class="record-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h4>Most Wins in a Year</h4>
+                    <div class="record-detail">
+                        <strong>Game of Thrones (2019)</strong>
+                        <p>12 Emmys in one year</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recent Winners Table -->
+        <section class="emmy-section">
+            <div class="section-header">
+                <h2><i class="fas fa-list-ol"></i> Recent Outstanding Series Winners</h2>
+            </div>
+            
+            <div class="winners-table-container">
+                <table class="emmy-table">
+                    <thead>
+                        <tr>
+                            <th>Year</th>
+                            <th>Drama Series</th>
+                            <th>Comedy Series</th>
+                            <th>Limited Series</th>
+                            <th>Network/Streamer</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2024</td>
+                            <td class="show-cell">Succession</td>
+                            <td class="show-cell">The Bear</td>
+                            <td class="show-cell">Beef</td>
+                            <td>HBO/Netflix</td>
+                        </tr>
+                        <tr>
+                            <td>2023</td>
+                            <td class="show-cell">Succession</td>
+                            <td class="show-cell">Ted Lasso</td>
+                            <td class="show-cell">The White Lotus</td>
+                            <td>HBO/Apple TV+</td>
+                        </tr>
+                        <tr>
+                            <td>2022</td>
+                            <td class="show-cell">Succession</td>
+                            <td class="show-cell">Ted Lasso</td>
+                            <td class="show-cell">The White Lotus</td>
+                            <td>HBO/Apple TV+</td>
+                        </tr>
+                        <tr>
+                            <td>2021</td>
+                            <td class="show-cell">The Crown</td>
+                            <td class="show-cell">Ted Lasso</td>
+                            <td class="show-cell">Mare of Easttown</td>
+                            <td>Netflix/Apple TV+/HBO</td>
+                        </tr>
+                        <tr>
+                            <td>2020</td>
+                            <td class="show-cell">Succession</td>
+                            <td class="show-cell">Schitt's Creek</td>
+                            <td class="show-cell">Watchmen</td>
+                            <td>HBO/Pop TV/HBO</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2503/2503508.png" alt="PopCornPrise">
+                    <h3>PopCornPrise</h3>
+                </div>
+                <p>Your guide to television excellence and Emmy Awards.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Emmy Categories</h4>
+                <ul>
+                    <li><a href="#">Drama Series</a></li>
+                    <li><a href="#">Comedy Series</a></li>
+                    <li><a href="#">Limited Series</a></li>
+                    <li><a href="#">Acting Awards</a></li>
+                    <li><a href="#">Technical Awards</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Television Networks</h4>
+                <ul>
+                    <li><a href="#">HBO/HBO Max</a></li>
+                    <li><a href="#">Netflix</a></li>
+                    <li><a href="#">Apple TV+</a></li>
+                    <li><a href="#">Hulu</a></li>
+                    <li><a href="#">Prime Video</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#trending">Movies & TV</a></li>
+                    <li><a href="index.html#reviews">Reviews</a></li>
+                    <li><a href="index.html#community">Community</a></li>
+                    <li><a href="oscar.html">Oscars</a></li>
+                </ul>
             </div>
         </div>
         
-        <!-- RIGHT: Language and Pro -->
-        <div class="right-section">
-            <a href="#" class="imdb-pro">PopCorn Pro</a>
-            <span class="language-selector">EN</span>
+        <div class="footer-bottom">
+            <p>&copy; 2026 PopCornPrise. Emmy Awards data for educational purposes.</p>
+            <p>The Emmy® is a registered trademark of the Academy of Television Arts & Sciences.</p>
         </div>
-    </div>
-    
-    <!-- Main Navigation -->
-    <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
-    <nav class="main-nav">
-        <div class="dropdown">
-            <button class="dropdown-btn" onclick="toggleDropdown(this)">
-                Movies ▼
-            </button>
-            <div class="dropdown-content">
-                <a href="WhatToWatch.html">What to watch</a>
-                <a href="TopRated.html">Top Rated</a>
-            </div>
-        </div>
+    </footer>
+
+    <!-- EMMY PAGE STYLES (Put at bottom of page) -->
+    <style>
+        /* ========================================
+           EMMY AWARDS PAGE STYLES - BOTTOM OF PAGE
+           ======================================== */
         
-        <div class="dropdown">
-            <button class="dropdown-btn" onclick="toggleDropdown(this)">
-                Awards & Events ▼
-            </button>
-            <div class="dropdown-content">
-                <a href="Oscar.html">Oscars</a>
-                <a href="Emmy.html">Emmys</a>
-            </div>
-        </div>
+        /* Emmy Hero Section */
+        .emmy-hero {
+            background: linear-gradient(135deg, 
+                rgba(0, 122, 255, 0.9) 0%, 
+                rgba(56, 182, 255, 0.8) 50%,
+                rgba(0, 122, 255, 0.9) 100%),
+                url('https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 40px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+
+        .emmy-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, 
+                rgba(255, 255, 255, 0.1) 0%,
+                rgba(255, 255, 255, 0.05) 100%);
+        }
+
+        .emmy-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .emmy-icon {
+            font-size: 80px;
+            color: white;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .emmy-hero h1 {
+            font-size: 56px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .emmy-hero h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .emmy-subtitle {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 40px;
+            font-weight: 500;
+        }
+
+        .emmy-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .emmy-stats .stat {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 20px 30px;
+            border-radius: 15px;
+            min-width: 150px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .emmy-stats .stat-number {
+            font-size: 42px;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 5px;
+        }
+
+        .emmy-stats .stat-label {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 600;
+        }
+
+        /* Emmy Main Content */
+        .emmy-main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px 60px;
+        }
+
+
+
+        .emmy-year {
+            background: #007AFF;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .section-subtitle {
+            color: #999;
+            font-size: 16px;
+            margin-top: 5px;
+        }
+
+        /* Big Winner Card */
+        .big-winner-card {
+            background: linear-gradient(135deg, rgba(0, 122, 255, 0.1) 0%, rgba(56, 182, 255, 0.05) 100%);
+            border: 2px solid #007AFF;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .winner-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #007AFF;
+            color: white;
+            padding: 10px 30px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 18px;
+            box-shadow: 0 5px 15px rgba(0, 122, 255, 0.3);
+        }
+
+        .winner-content {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        @media (max-width: 1024px) {
+            .winner-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+
+        .winner-poster img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .emmy-count {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 122, 255, 0.9);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .winner-details h3 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: #007AFF;
+        }
+
+        .winner-meta {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            color: #999;
+            font-size: 14px;
+        }
+
+        .winner-meta i {
+            color: #007AFF;
+            margin-right: 5px;
+        }
+
+        .winner-description {
+            color: #ccc;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            font-size: 16px;
+        }
+
+        body.light-mode .winner-description {
+            color: #666;
+        }
+
+        .winner-awards {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .winner-awards .award-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: rgba(0, 122, 255, 0.1);
+            padding: 12px 20px;
+            border-radius: 8px;
+            border-left: 4px solid #007AFF;
+        }
+
+        .award-icon {
+            font-size: 20px;
+        }
+
+        .award-text {
+            color: #ddd;
+            font-size: 15px;
+        }
+
+        body.light-mode .award-text {
+            color: #333;
+        }
+
+        .winner-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .emmy-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 25px;
+            background: #007AFF;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .emmy-btn:hover {
+            background: #0056CC;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 122, 255, 0.3);
+        }
+
+        .emmy-btn.secondary {
+            background: rgba(0, 122, 255, 0.1);
+            color: #007AFF;
+            border: 2px solid #007AFF;
+        }
+
+        .emmy-btn.secondary:hover {
+            background: rgba(0, 122, 255, 0.2);
+        }
+
+        /* Winners Grid */
+        .winners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .winner-card {
+            background: var(--card-dark);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 122, 255, 0.2);
+            position: relative;
+        }
+
+        body.light-mode .winner-card {
+            background: var(--card-light);
+        }
+
+        .winner-card:hover {
+            transform: translateY(-5px);
+            border-color: #007AFF;
+            box-shadow: 0 10px 25px rgba(0, 122, 255, 0.2);
+        }
+
+        .winner-category {
+            color: #007AFF;
+            font-weight: bold;
+            margin-bottom: 20px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .person-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            overflow: hidden;
+            border: 3px solid #007AFF;
+        }
+
+        .person-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .winner-card h4 {
+            font-size: 20px;
+            margin-bottom: 5px;
+            color: white;
+        }
+
+        body.light-mode .winner-card h4 {
+            color: #333;
+        }
+
+        .show-title, .show-creator {
+            color: #999;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .emmy-icon {
+            font-size: 30px;
+            color: #007AFF;
+        }
+
+        .award-count {
+            margin-top: 10px;
+            font-size: 12px;
+            color: #999;
+            font-weight: bold;
+        }
+
+        /* Categories Section */
+        .categories-section {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.7) 100%);
+            border-radius: 20px;
+            padding: 40px;
+        }
+
+        body.light-mode .categories-section {
+            background: linear-gradient(135deg, rgba(240, 240, 240, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%);
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .category-card {
+            background: var(--card-dark);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(0, 122, 255, 0.3);
+        }
+
+        body.light-mode .category-card {
+            background: var(--card-light);
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            border-color: #007AFF;
+        }
+
+        .category-icon {
+            font-size: 40px;
+            color: #007AFF;
+            margin-bottom: 20px;
+        }
+
+        .category-card h4 {
+            color: #007AFF;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .category-winner {
+            background: rgba(0, 122, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .category-winner strong {
+            display: block;
+            font-size: 18px;
+            color: white;
+            margin-bottom: 5px;
+        }
+
+        body.light-mode .category-winner strong {
+            color: #333;
+        }
+
+        .category-winner span {
+            color: #999;
+            font-size: 12px;
+        }
+
+        .category-desc {
+            color: #ccc;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        body.light-mode .category-desc {
+            color: #666;
+        }
+
+        /* History Section */
+        .history-section {
+            background: linear-gradient(135deg, rgba(0, 122, 255, 0.1) 0%, rgba(56, 182, 255, 0.05) 100%);
+            border-radius: 20px;
+            padding: 40px;
+        }
+
+        .history-timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 40px auto 0;
+        }
+
+        .history-timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: #007AFF;
+        }
+
+        .history-item {
+            position: relative;
+            margin-bottom: 40px;
+            padding-left: 80px;
+        }
+
+        .history-year {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 60px;
+            height: 60px;
+            background: #007AFF;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+            z-index: 2;
+        }
+
+        .history-content {
+            background: var(--card-dark);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #007AFF;
+        }
+
+        body.light-mode .history-content {
+            background: var(--card-light);
+        }
+
+        .history-content h4 {
+            color: #007AFF;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .history-content p {
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        body.light-mode .history-content p {
+            color: #666;
+        }
+
+        /* Records Section */
+        .records-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .record-card {
+            background: linear-gradient(135deg, rgba(0, 122, 255, 0.1) 0%, rgba(56, 182, 255, 0.05) 100%);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(0, 122, 255, 0.3);
+        }
+
+        .record-card:hover {
+            transform: translateY(-5px);
+            border-color: #007AFF;
+        }
+
+        .record-icon {
+            font-size: 40px;
+            color: #007AFF;
+            margin-bottom: 20px;
+        }
+
+        .record-card h4 {
+            color: #007AFF;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .record-detail {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+        body.light-mode .record-detail {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .record-detail strong {
+            font-size: 22px;
+            color: white;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        body.light-mode .record-detail strong {
+            color: #333;
+        }
+
+        .record-detail p {
+            color: #999;
+            font-size: 14px;
+        }
+
+        /* Emmy Table */
+        .winners-table-container {
+            overflow-x: auto;
+            margin-top: 20px;
+        }
+
+        .emmy-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: var(--card-dark);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        body.light-mode .emmy-table {
+            background: var(--card-light);
+        }
+
+        .emmy-table th {
+            background: #007AFF;
+            color: white;
+            padding: 20px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .emmy-table td {
+            padding: 18px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ccc;
+        }
+
+        body.light-mode .emmy-table td {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            color: #666;
+        }
+
+        .emmy-table tr:hover {
+            background: rgba(0, 122, 255, 0.1);
+        }
+
+        .show-cell {
+            font-weight: 500;
+            color: white;
+        }
+
+        body.light-mode .show-cell {
+            color: #333;
+        }
+
+        /* View More Section */
+        .view-more-section {
+            background: linear-gradient(135deg, rgba(0, 122, 255, 0.2) 0%, rgba(56, 182, 255, 0.1) 100%);
+            border-radius: 20px;
+            padding: 40px;
+            border: 2px solid #007AFF;
+        }
+
+        .view-more-content {
+            text-align: center;
+        }
+
+        .view-more-content h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #007AFF;
+        }
+
+        .view-more-content p {
+            color: #ccc;
+            margin-bottom: 30px;
+            font-size: 16px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        body.light-mode .view-more-content p {
+            color: #666;
+        }
+
+        .view-more-actions {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .view-more-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .emmy-btn {
+                min-width: 200px;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .emmy-stats {
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+            
+            .emmy-stats .stat {
+                min-width: 120px;
+                padding: 15px 20px;
+            }
+            
+            .emmy-stats .stat-number {
+                font-size: 32px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .emmy-hero {
+                padding: 60px 20px;
+            }
+            
+            .emmy-hero h1 {
+                font-size: 42px;
+            }
+            
+            .emmy-hero h2 {
+                font-size: 24px;
+            }
+            
+            .emmy-section .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .history-timeline::before {
+                left: 20px;
+            }
+            
+            .history-item {
+                padding-left: 60px;
+            }
+            
+            .history-year {
+                width: 40px;
+                height: 40px;
+                font-size: 14px;
+            }
+            
+            .winner-actions {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .emmy-hero h1 {
+                font-size: 32px;
+            }
+            
+            .emmy-hero h2 {
+                font-size: 20px;
+            }
+            
+            .emmy-icon {
+                font-size: 60px;
+            }
+            
+            .emmy-btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .big-winner-card {
+                padding: 20px;
+            }
+            
+            .winner-badge {
+                font-size: 14px;
+                padding: 8px 20px;
+            }
+        }
+
+        /* Light Mode Adjustments */
+        body.light-mode .emmy-hero {
+            color: white;
+        }
+
+        body.light-mode .emmy-subtitle {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        body.light-mode .emmy-stats .stat {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        body.light-mode .big-winner-card {
+            background: linear-gradient(135deg, rgba(0, 122, 255, 0.05) 0%, rgba(56, 182, 255, 0.02) 100%);
+        }
+
+        body.light-mode .winner-awards .award-item {
+            background: rgba(0, 122, 255, 0.08);
+        }
+
+        body.light-mode .winner-category {
+            color: #0056CC;
+        }
+
+        body.light-mode .view-more-section {
+            background: linear-gradient(135deg, rgba(0, 122, 255, 0.1) 0%, rgba(56, 182, 255, 0.05) 100%);
+        }
         
-        <a href="index.html#reviews" class="dropdown-btn">Reviews</a>
-        <a href="index.html#ranking" class="dropdown-btn">Ranking</a>
-        <a href="index.html#submit" class="dropdown-btn">Submit Review</a>
-        <a href="index.html#community" class="dropdown-btn">Community</a> 
-        <a href="index.html#about" class="dropdown-btn">About</a>
-    </nav>
-</header>
-
-<!-- Emmy Awards Header -->
-<section class="hero" style="height: 200px; background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);">
-    <div class="hero-content">
-        <h1>🏆 Emmy Awards</h1>
-        <p>Celebrating the best in television</p>
-    </div>
-</section>
-
-<!-- Emmy Awards Content -->
-<section class="section">
-    <h2 class="title">Latest Emmy Winners 2024</h2>
-    
-    <!-- Big Winner -->
-    <div class="big-winner">
-        <h3>🏆 Biggest Winner</h3>
-        <div class="winner-card">
-            <img src="Images and video/Shawnshank.jpg" alt="Succession">
-            <div class="winner-info">
-                <h2>Succession</h2>
-                <p>Best Drama Series</p>
-                <p>HBO • 4th Emmy Win</p>
-                <p class="description">A drama about a rich family fighting for control of their company.</p>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Other Winners -->
-    <h2 class="title">Other Winners</h2>
-    
-    <div class="winners-grid">
-        <div class="small-winner">
-            <h3>🎭 Best Comedy</h3>
-            <p><strong>The Bear</strong></p>
-            <p>FX Network</p>
-        </div>
-        
-        <div class="small-winner">
-            <h3>👨‍🍳 Best Actor (Comedy)</h3>
-            <p><strong>Jeremy Allen White</strong></p>
-            <p>The Bear</p>
-        </div>
-        
-        <div class="small-winner">
-            <h3>👩‍🏫 Best Actress (Comedy)</h3>
-            <p><strong>Quinta Brunson</strong></p>
-            <p>Abbott Elementary</p>
-        </div>
-        
-        <div class="small-winner">
-            <h3>👑 Best Actor (Drama)</h3>
-            <p><strong>Kieran Culkin</strong></p>
-            <p>Succession</p>
-        </div>
-        
-        <div class="small-winner">
-            <h3>👸 Best Actress (Drama)</h3>
-            <p><strong>Sarah Snook</strong></p>
-            <p>Succession</p>
-        </div>
-        
-        <div class="small-winner">
-            <h3>📺 Best Limited Series</h3>
-            <p><strong>Beef</strong></p>
-            <p>Netflix</p>
-        </div>
-    </div>
-    
-    <!-- Past Winners Table -->
-    <h2 class="title">Past Emmy Winners</h2>
-    
-    <table class="simple-table">
-        <tr>
-            <th>Year</th>
-            <th>Best Drama</th>
-            <th>Best Comedy</th>
-        </tr>
-        <tr>
-            <td>2023</td>
-            <td>Succession</td>
-            <td>Ted Lasso</td>
-        </tr>
-        <tr>
-            <td>2022</td>
-            <td>Succession</td>
-            <td>Ted Lasso</td>
-        </tr>
-        <tr>
-            <td>2021</td>
-            <td>The Crown</td>
-            <td>Schitt's Creek</td>
-        </tr>
-        <tr>
-            <td>2020</td>
-            <td>Succession</td>
-            <td>Schitt's Creek</td>
-        </tr>
-        <tr>
-            <td>2019</td>
-            <td>Game of Thrones</td>
-            <td>Fleabag</td>
-        </tr>
-    </table>
-    
-    <!-- About Emmys -->
-    <div class="about-awards">
-        <h2 class="title">What are the Emmy Awards?</h2>
-        <div class="about-content">
-            <p>🌟 <strong>The Emmy Awards</strong> are awards for excellence in the television industry.</p>
-            <p>📅 <strong>First started:</strong> 1949</p>
-            <p>🏆 <strong>Most wins:</strong> Saturday Night Live (86 awards)</p>
-            <p>📺 <strong>Awards for:</strong> TV shows, actors, directors, writers</p>
-            <p>🎬 <strong>Categories:</strong> Drama, Comedy, Limited Series, Reality TV</p>
-        </div>
-    </div>
-</section>
-
-<footer>
-    <p>Contact us: <a href="mailto:contact@moviesphere.com">contact@moviesphere.com</a></p>
-    <p>Follow us: 
-        <a href="#">Twitter</a> | 
-        <a href="#">Facebook</a> | 
-        <a href="#">Instagram</a>
-    </p>
-    <p>© 2026 MovieSphere. All data is for educational purposes.</p>
-</footer>
-
-<style>
-/* Simple Emmy Styles */
-.big-winner {
-    max-width: 800px;
-    margin: 0 auto 40px auto;
-}
-
-.big-winner h3 {
-    color: #f5c518;
-    font-size: 24px;
-    margin-bottom: 15px;
-    text-align: center;
-}
-
-.winner-card {
-    background: #1a1a1a;
-    border-radius: 10px;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    border: 2px solid #6a11cb;
-}
-
-.winner-card img {
-    width: 150px;
-    height: 200px;
-    border-radius: 8px;
-    object-fit: cover;
-}
-
-.winner-info h2 {
-    color: white;
-    font-size: 28px;
-    margin-bottom: 10px;
-}
-
-.winner-info p {
-    color: #ccc;
-    margin: 8px 0;
-}
-
-.winner-info .description {
-    color: #aaa;
-    font-style: italic;
-    margin-top: 15px;
-}
-
-.winners-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    margin: 40px 0;
-}
-
-.small-winner {
-    background: #1a1a1a;
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    border: 1px solid #333;
-    transition: transform 0.3s;
-}
-
-.small-winner:hover {
-    transform: translateY(-5px);
-    border-color: #2575fc;
-}
-
-.small-winner h3 {
-    color: #f5c518;
-    margin-bottom: 15px;
-    font-size: 18px;
-}
-
-.small-winner p {
-    color: white;
-    margin: 5px 0;
-}
-
-.small-winner strong {
-    color: #6a11cb;
-    font-size: 20px;
-}
-
-.simple-table {
-    width: 100%;
-    max-width: 800px;
-    margin: 40px auto;
-    border-collapse: collapse;
-    background: #1a1a1a;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.simple-table th {
-    background: #6a11cb;
-    color: white;
-    padding: 15px;
-    text-align: left;
-}
-
-.simple-table td {
-    padding: 12px 15px;
-    border-bottom: 1px solid #333;
-    color: #ccc;
-}
-
-.simple-table tr:hover {
-    background: #222;
-}
-
-.about-awards {
-    background: #1a1a1a;
-    border-radius: 10px;
-    padding: 30px;
-    margin-top: 50px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.about-content {
-    background: #222;
-    padding: 20px;
-    border-radius: 8px;
-    margin-top: 20px;
-}
-
-.about-content p {
-    color: #ccc;
-    margin: 10px 0;
-    font-size: 16px;
-    padding: 8px 0;
-    border-bottom: 1px solid #333;
-}
-
-.about-content p:last-child {
-    border-bottom: none;
-}
-
-/* Light Theme */
-body.light .winner-card,
-body.light .small-winner,
-body.light .simple-table,
-body.light .about-awards {
-    background: #fff;
-    border: 1px solid #ddd;
-}
-
-body.light .winner-info h2,
-body.light .small-winner p {
-    color: #333;
-}
-
-body.light .winner-info p,
-body.light .about-content p {
-    color: #666;
-}
-
-body.light .simple-table th {
-    background: #6a11cb;
-    color: white;
-}
-
-body.light .simple-table td {
-    color: #666;
-}
-
-body.light .simple-table tr:hover {
-    background: #f5f5f5;
-}
-
-body.light .about-content {
-    background: #f5f5f5;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .winner-card {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .winner-card img {
-        width: 120px;
-        height: 160px;
-    }
-    
-    .winners-grid {
-        grid-template-columns: repeat(2, 1fr);
-        padding: 0 10px;
-    }
-    
-    .simple-table {
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 480px) {
-    .winners-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .simple-table {
-        font-size: 12px;
-    }
-    
-    .simple-table th,
-    .simple-table td {
-        padding: 10px;
-    }
-}
-</style>
+        /* Drama icon styling */
+        .fa-drama {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            content: "\f008";
+        }
+    </style>
 </body>
 </html>
