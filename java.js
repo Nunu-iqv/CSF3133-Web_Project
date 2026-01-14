@@ -447,3 +447,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+/*submit review*/
+function showToast() {
+    const toast = document.getElementById('toast');
+    toast.style.display = 'block';
+    setTimeout(() => {
+        toast.style.display = 'none';
+    }, 3000);
+}
+
+// In your form submit handler:
+// showToast();
