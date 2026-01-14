@@ -309,15 +309,6 @@ body.light-mode .dropdown-menu a {
     right: 30px;
 }
 
-.slider-dots {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-}
-
 .dot {
     width: 12px;
     height: 12px;
