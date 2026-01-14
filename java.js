@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initWatchlist();
 });
 
-// Theme Toggle
+// Theme Toggle - Simplified and Fixed
 function initTheme() {
     const themeToggle = document.getElementById('themeToggle');
     const themeIcon = themeToggle.querySelector('i');
@@ -32,16 +32,22 @@ function initTheme() {
     }
     
     themeToggle.addEventListener('click', function() {
-        document.body.classList.toggle('light-mode');
+        const isLightMode = document.body.classList.toggle('light-mode');
         
-        if (document.body.classList.contains('light-mode')) {
+        if (isLightMode) {
             themeIcon.className = 'fas fa-sun';
             localStorage.setItem('theme', 'light');
         } else {
             themeIcon.className = 'fas fa-moon';
             localStorage.setItem('theme', 'dark');
         }
+        
+        // Debug: log the current theme
+        console.log('Theme changed to:', isLightMode ? 'light' : 'dark');
     });
+    
+    // Debug: log initial theme
+    console.log('Initial theme:', savedTheme);
 }
 
 // Slider Functionality
